@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otto’s Dance Party</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #121212;
+      color: #eee;
+      line-height: 1.6;
+    }
+    .hero-banner {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(90deg, #00ff99 0%, #00e6c3 100%);
+      color: #000;
+    }
+    .hero-banner h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero-banner p {
+      font-size: 1.2rem;
+    }
+    .project-detail {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .project-detail h2 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: #00e6c3;
+    }
+    .project-detail p,
+    .project-detail li {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: #ccc;
+    }
+    .project-detail ul {
+      padding-left: 20px;
+      list-style: disc;
+    }
+    .project-detail img {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    .feature-box {
+      background: #1e1e1e;
+      padding: 20px;
+      border: 1px solid #00ff99;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .tech-tags {
+      margin-top: 20px;
+    }
+    .tech-tags span {
+      display: inline-block;
+      background: #333;
+      color: #00ff99;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 0.9rem;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: transparent;
+      border: 2px solid #00ff99;
+      color: #00ff99;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #00ff99;
+      color: #000;
+      transform: translateY(-3px);
+    }
+    .reel-embed {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .reel-embed iframe {
+      width: 320px;
+      height: 560px;
+      border: none;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero-banner">
+    <h1>Otto’s Dance Party</h1>
+    <p>Touch-sensitive Arduino robot that grooves on command</p>
+  </div>
+
+  <section class="project-detail">
+    <img src="otto.jpg" alt="Otto the dancing robot">
+
+    <h2>The Story Behind Otto's Dance Party</h2>
+    <p>It all started on a rainy afternoon when boredom hit hard. The usual coding projects just weren't cutting it, and the thought of another plain old blinking LED felt like a snooze fest. That's when the idea struck: why not create a robot with some serious dance moves?</p>
+    <p>Meet Otto, the robot with rhythm! But Otto wasn’t always the life of the party. In fact, he started off as a shy little bot, barely moving an inch. With some creative engineering, a few servos, and a touch sensor, Otto was transformed into the ultimate dance machine.</p>
+
+    <h2>The Transformation</h2>
+    <p>Otto learned to walk with swagger, turn on a dime, and even bust out a moonwalk that would make MJ proud! One tap on his touch sensor and he'd switch up his dance routine like a pro DJ.</p>
+
+    <h2>Otto’s Big Debut</h2>
+    <p>Otto danced, turned, and moonwalked his way into everyone’s hearts. And just when you thought you’d seen it all, he’d hit you with a custom dance routine and theme music.</p>
+
+    <h2>Watch Otto in Action</h2>
+    <div class="reel-embed">
+      <iframe src="https://www.instagram.com/reel/C_NudNEyAa3/embed" allowfullscreen></iframe>
+    </div>
+
+    <h2>Working Explanation</h2>
+    <ul>
+      <li><strong>Pin Definitions:</strong> Servos connected to defined Arduino Nano pins.</li>
+      <li><strong>Setup:</strong> Initialization of servos, buzzer, and touch sensor.</li>
+      <li><strong>Touch Detection:</strong> Triggers mode switch using a touch sensor.</li>
+      <li><strong>Movement Modes:</strong> Each mode has a different action: walking, turning, bending, shaking, etc.</li>
+      <li><strong>Sound Feedback:</strong> Audio feedback through buzzer with each mode change.</li>
+    </ul>
+
+    <h2>Dance Modes</h2>
+    <div class="features-grid">
+      <div class="feature-box">🦿 Walking</div>
+      <div class="feature-box">🔄 Turning</div>
+      <div class="feature-box">🙆 Bending</div>
+      <div class="feature-box">🦵 Leg Shaking</div>
+      <div class="feature-box">🕺 Moonwalking</div>
+      <div class="feature-box">👯 Crusaito</div>
+      <div class="feature-box">🐤 Flapping</div>
+      <div class="feature-box">🏃 Jumping</div>
+      <div class="feature-box">🎶 Custom Routines</div>
+    </div>
+
+    <h2>Tech Used</h2>
+    <div class="tech-tags">
+      <span>Arduino Nano</span>
+      <span>Micro Servo</span>
+      <span>Touch Sensor</span>
+      <span>Buzzer</span>
+      <span>3D Printed Frame</span>
+    </div>
+
+    <a href="https://www.hackster.io/arkamanna20" target="_blank" class="btn">🔗 View on Hackster</a>
+    <a href="index.html" class="btn">⬅ Back to Portfolio</a>
+  </section>
+
+</body>
+</html>

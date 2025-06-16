@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Line Follower Robot</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #121212;
+      color: #eee;
+      line-height: 1.6;
+    }
+    .hero-banner {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(90deg, #1cb5e0 0%, #000851 100%);
+      color: #fff;
+    }
+    .hero-banner h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero-banner p {
+      font-size: 1.2rem;
+    }
+    .project-detail {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .project-detail h2 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: #00e6c3;
+    }
+    .project-detail p,
+    .project-detail li {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: #ccc;
+    }
+    .project-detail ul {
+      padding-left: 20px;
+      list-style: disc;
+    }
+    .project-detail img {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    .tech-tags {
+      margin-top: 20px;
+    }
+    .tech-tags span {
+      display: inline-block;
+      background: #333;
+      color: #00ff99;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 0.9rem;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      margin-right: 10px;
+      padding: 12px 24px;
+      background-color: transparent;
+      border: 2px solid #00ff99;
+      color: #00ff99;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #00ff99;
+      color: #000;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-banner">
+    <h1>Line Follower Robot</h1>
+    <p>ESP32 Powered Bot with 8-Channel IR and PID Logic</p>
+  </div>
+
+  <section class="project-detail">
+    <img src="linefollower-1.jpg" alt="Line Follower Bot" />
+
+    <h2>Overview</h2>
+    <p>This line follower robot is built using an ESP32, TB6612FNG motor driver, 8-channel IR sensor array, and N20 motors. The bot uses PID control for smooth and accurate tracking of black lines on white surfaces. A button toggles start/stop mode, and all logic runs onboard with PWM motor control.</p>
+
+    <h2>How It Works</h2>
+    <ul>
+      <li>IR array reads line position and converts it to a weighted value (0–700).</li>
+      <li>Bot calculates deviation from center (error = 350 - position).</li>
+      <li>PID logic adjusts motor speeds to minimize the error.</li>
+      <li>PWM is applied using ledcWrite to smoothly vary motor speeds.</li>
+      <li>Button toggles run state, and serial debug prints IR + error values.</li>
+    </ul>
+    
+    <img src="linefollower-2.jpg" alt="Line Follower on track" />
+    <p class="image-caption"></p>
+
+    <h2>Code & Tuning</h2>
+    <p>The PID controller uses Kp = 30 and Kd = 20. Ki is kept at 0 to avoid integral windup. The bot performs best at medium speed on sharp and smooth curves. The IR sensor values are inverted using <code>!digitalRead()</code> for compatibility with black-line-on-white tracks.</p>
+
+    <h2>Watch the Bot in Action</h2>
+    <video width="100%" controls>
+      <source src="linefollower.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <h2>Tech Stack</h2>
+    <div class="tech-tags">
+      <span>ESP32</span>
+      <span>TB6612FNG</span>
+      <span>IR Sensor Array</span>
+      <span>N20 Motors</span>
+      <span>PID Control</span>
+      <span>PWM</span>
+      <span>Arduino IDE</span>
+    </div>
+
+    <a href="index.html" class="btn">⬅ Back to Portfolio</a>
+  </section>
+</body>
+</html>

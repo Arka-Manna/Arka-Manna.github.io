@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Irrigation System</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #121212;
+      color: #eee;
+      line-height: 1.6;
+    }
+    .hero-banner {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(90deg, #00ff99 0%, #00e6c3 100%);
+      color: #000;
+    }
+    .hero-banner h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero-banner p {
+      font-size: 1.2rem;
+    }
+    .project-detail {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .project-detail h2 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: #00e6c3;
+    }
+    .project-detail p,
+    .project-detail li {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: #ccc;
+    }
+    .project-detail ul {
+      padding-left: 20px;
+      list-style: disc;
+    }
+    .project-detail img {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    .image-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+    .tech-tags {
+      margin-top: 20px;
+    }
+    .tech-tags span {
+      display: inline-block;
+      background: #333;
+      color: #00ff99;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 0.9rem;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      margin-right: 10px;
+      padding: 12px 24px;
+      background-color: transparent;
+      border: 2px solid #00ff99;
+      color: #00ff99;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #00ff99;
+      color: #000;
+      transform: translateY(-3px);
+    }
+    .story-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .story-link a {
+      color: #00e6c3;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-banner">
+    <h1>Smart Irrigation System</h1>
+    <p>Precision Agriculture with Sensor Networks, Nutrient Intelligence & ESP-NOW</p>
+  </div>
+
+  <section class="project-detail">
+    <img src="irrigation-2.jpg" alt="Smart Irrigation System" />
+    <h2>Overview</h2>
+    <p>This Smart Irrigation System is a fully wireless, real-time decision-making platform for agricultural water and nutrient management. Designed to enhance yield and efficiency, it operates through coordinated sensor and control nodes using ESP-NOW and a central decision logic unit.</p>
+
+    <h2>System Architecture</h2>
+    <ul>
+      <li><strong>Sensor Nodes:</strong> Collect moisture, temperature, light data; transmit wirelessly using ESP-NOW.</li>
+      <li><strong>NPK Node:</strong> Measures Nitrogen, Phosphorus, and Potassium; displays data on an OLED; sends nutrient data to base station.</li>
+      <li><strong>Central Node:</strong> Receives data, triggers irrigation pump via relay, updates user dashboard.</li>
+    </ul>
+
+    <h2>Core Functionalities</h2>
+    <ul>
+      <li><strong>Fertilizer Recommendation:</strong> Based on real-time NPK + crop logic.</li>
+      <li><strong>Weather-Integrated Alerts:</strong> Rainfall/drought warnings via forecast APIs.</li>
+      <li><strong>Multilingual Dashboard:</strong> Web app interface in local languages with voice prompts.</li>
+      <li><strong>Offline Support:</strong> ESP-NOW mesh keeps working without internet.</li>
+      <li><strong>Security Extension:</strong> Optional PIR or camera integration for field monitoring.</li>
+    </ul>
+
+    <h2>How It Works</h2>
+<p>The Smart Irrigation System consists of a network of ESP-NOW-enabled sensor nodes, a central control node, and a web-based dashboard. Here's a step-by-step breakdown of how it functions:</p>
+
+<ul>
+  <li><strong>1. Data Collection by Sensor Node:</strong> 
+    Each field-deployed sensor node collects data such as soil moisture, temperature, and light intensity. These are captured using calibrated analog/digital sensors interfaced with ESP32 modules.</li>
+    <img src="3.jpg">
+  <li><strong>2. NPK Measurement Node:</strong>
+    A separate NPK node utilizes a soil nutrient sensor to measure nitrogen, phosphorus, and potassium levels. An onboard OLED screen displays these in real time while the ESP32 sends data to the central node wirelessly.</li>
+    <img src="6.jpg">
+  <li><strong>3. Communication via ESP-NOW:</strong>
+    All nodes communicate peer-to-peer using ESP-NOW, which is faster and more energy-efficient than traditional WiFi. This allows the network to function even without internet.</li>
+
+  <li><strong>4. Central Node Processing:</strong>
+    The central node receives sensor data from all nodes, processes it to assess soil dryness and nutrient deficiency. If moisture is below threshold, the central node triggers a relay module that turns on the water pump.</li>
+
+  <li><strong>5. Weather Integration:</strong>
+    The central node also uses RESTful APIs to pull local weather forecasts. If rain is predicted soon, irrigation is postponed to save water. Alerts are generated for extreme heat or potential drought.</li>
+    <img src="4.jpg">
+  <li><strong>6. Fertilizer Recommendation:</strong>
+    Based on NPK readings and crop type, the system calculates how much and what type of fertilizer is needed. Recommendations are displayed on the dashboard and optionally sent via voice alerts.</li>
+
+  <li><strong>7. Web Dashboard Output:</strong>
+    All processed data and decisions are published to a multilingual web app. Farmers can see current soil stats, nutrient advice, forecast warnings, and manual pump override options in local language.</li>
+    <img src="5.jpg">
+  <li><strong>8. Voice + Offline Support:</strong>
+    In low-literacy or remote settings, voice alerts (via speaker or app) guide farmers. Offline-first behavior ensures operation even when disconnected from the internet.</li>
+</ul>
+
+    <h2>Tech Stack</h2>
+    <div class="tech-tags">
+      <span>ESP32</span>
+      <span>ESP8266</span>
+      <span>ESP-NOW</span>
+      <span>NPK Sensor</span>
+      <span>Soil Moisture Sensor</span>
+      <span>OLED Display</span>
+      <span>Relay + Pump</span>
+      <span>Weather API</span>
+      <span>Web Dashboard</span>
+      <span>Arduino IDE</span>
+    </div>
+
+    <h2>My Role</h2>
+    <p>I personally designed the entire system architecture, programmed all nodes, integrated ESP-NOW for reliable communication, developed the nutrient analysis logic, and implemented the voice-enabled dashboard. I also handled all hardware integration, testing, and optimization for field reliability.</p>
+
+    <a href="index.html" class="btn">⬅ Back to Portfolio</a>
+  </section>
+</body>
+</html>

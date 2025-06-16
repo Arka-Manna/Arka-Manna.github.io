@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wi-Fi Clock & Message Board</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #121212;
+      color: #eee;
+      line-height: 1.6;
+    }
+    .hero-banner {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+      color: #fff;
+    }
+    .hero-banner h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero-banner p {
+      font-size: 1.2rem;
+    }
+    .project-detail {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .project-detail h2 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: #00e6c3;
+    }
+    .project-detail p,
+    .project-detail li {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: #ccc;
+    }
+    .project-detail ul {
+      padding-left: 20px;
+      list-style: disc;
+    }
+    .project-detail img {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    .tech-tags {
+      margin-top: 20px;
+    }
+    .tech-tags span {
+      display: inline-block;
+      background: #333;
+      color: #00ff99;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 0.9rem;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      margin-right: 10px;
+      padding: 12px 24px;
+      background-color: transparent;
+      border: 2px solid #00ff99;
+      color: #00ff99;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #00ff99;
+      color: #000;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero-banner">
+    <h1>Wi-Fi Clock & Message Board</h1>
+    <p>ESP8266 Smart Display with NTP Time & Web-Controlled Messaging</p>
+  </div>
+
+  <section class="project-detail">
+    <img src="wifi-clock.jpg" alt="Smart WiFi Clock">
+
+    <h2>Overview</h2>
+    <p>This simple yet smart project turns an ESP8266 and a MAX7219 LED matrix into a Wi-Fi-enabled digital clock and message board. It connects to your Wi-Fi, fetches the time using NTP, and displays it in real-time — but with a twist. A built-in web interface allows you to switch modes and show custom messages on the LED matrix.</p>
+
+    <h2>Why I Made This</h2>
+    <p>I wanted a fun, functional project that didn’t rely on apps or cloud services. With just a browser, anyone on the same Wi-Fi can control the clock or post a message. It’s the perfect DIY desk gadget.</p>
+    <img src="wifi-clock-1.jpg" alt="Clock showing IP address" />
+    <p class="image-caption">Clock displays the text</p>
+
+    <h2>Wiring</h2>
+    <ul>
+      <li>VCC → 3V</li>
+      <li>GND → GND</li>
+      <li>DIN → D7 (GPIO13)</li>
+      <li>CS → D8 (GPIO15)</li>
+      <li>CLK → D5 (GPIO14)</li>
+    </ul>
+
+    <h2>Web Interface</h2>
+    <ul>
+      <li>Shows current IP address on matrix after connecting</li>
+      <li>Offers buttons to switch to Clock Mode</li>
+      <li>Message Mode lets you enter any text to scroll on the display</li>
+      <img src="wifi-clock-2.jpg" alt="Web UI and matrix display" />
+      <p class="image-caption">Web interface lets you toggle between Clock and Message Mode.</p>
+    </ul>
+
+    <h2>Software Stack</h2>
+    <ul>
+      <li>ESP8266 Arduino Core</li>
+      <li>NTPClient for time sync</li>
+      <li>MD_Parola + MD_MAX72XX libraries for matrix display</li>
+      <li>Simple HTTP WebServer for control</li>
+    </ul>
+
+    <h2>Tech Stack</h2>
+    <div class="tech-tags">
+      <span>ESP8266</span>
+      <span>MAX7219</span>
+      <span>LED Matrix</span>
+      <span>NTPClient</span>
+      <span>MD_Parola</span>
+      <span>WiFi WebServer</span>
+      <span>Arduino IDE</span>
+    </div>
+   <a href="index.html" class="btn">⬅ Back to Portfolio</a>
+  </section>
+
+</body>
+</html>

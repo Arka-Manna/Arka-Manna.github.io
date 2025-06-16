@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STRIX Fixed-Wing Aircraft</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #121212;
+      color: #eee;
+      line-height: 1.6;
+    }
+    .hero-banner {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(90deg, #141e30 0%, #243b55 100%);
+      color: #fff;
+    }
+    .hero-banner h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero-banner p {
+      font-size: 1.2rem;
+    }
+    .project-detail {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .project-detail h2 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: #00e6c3;
+    }
+    .project-detail p,
+    .project-detail li {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: #ccc;
+    }
+    .project-detail ul {
+      padding-left: 20px;
+      list-style: disc;
+    }
+    .side-by-side {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 30px 0;
+    }
+        .side-by-side img {
+        max-width: 45%;
+        height: auto;
+        border-radius: 10px;
+    }
+    .project-detail img {
+      display: block;
+      margin: 30px auto;
+      max-width: 80%;
+      border-radius: 12px;
+    }
+    .tech-tags {
+      margin-top: 20px;
+    }
+    .tech-tags span {
+      display: inline-block;
+      background: #333;
+      color: #00ff99;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 0.9rem;
+    }
+    video {
+      display: block;
+      margin: 30px auto;
+      max-width: 80%;
+      border-radius: 12px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      margin-right: 10px;
+      padding: 12px 24px;
+      background-color: transparent;
+      border: 2px solid #00ff99;
+      color: #00ff99;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #00ff99;
+      color: #000;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero-banner">
+    <h1>STRIX Fixed-Wing Aircraft</h1>
+    <p>Scratch-Built RC Plane Designed for Manual Flight</p>
+  </div>
+
+  <section class="project-detail">
+    <img src="strix-1.jpg" alt="STRIX Plane View 1" />
+  
+
+    <h2>Overview</h2>
+    <p>STRIX is a manually controlled fixed-wing RC aircraft built from scratch. Inspired by agile mid-wing designs, STRIX emphasizes balance, speed, and control — all without a flight controller. The design process focused on symmetry, airfoil shaping, and CG balancing for optimal manual flight stability.</p>
+
+    <h2>Design Features</h2>
+    <ul>
+      <li>Symmetrical wing layout for aerobatic control</li>
+      <li>Stabilized vertical and horizontal surfaces</li>
+      <li>Lightweight, high-thrust manual build</li>
+      <li>No autopilot — fully RC flown</li>
+    </ul>
+    <div class="side-by-side">
+        <img src="strix-2.jpg" alt=" " style="max-width: 50%; height: auto;">
+        <img src="strix-3.jpg" alt=" " style="max-width: 50%; height: auto;">
+    </div>
+    <img src="strix-6.jpg" alt="STRIX Plane View 2" />
+    <h2>Electronics</h2>
+    <ul>
+      <li>2200KV Brushless Motor</li>
+      <li>40A ESC</li>
+      <li>3x 9g Servos (Elevator, Rudder, Ailerons)</li>
+      <li>3S 2200mAh LiPo</li>
+      <li>Standard 6CH RC Receiver</li>
+    </ul>
+
+    <h2>Video</h2>
+
+    <div class="side-by-side">
+        <video controls style="max-width: 50%; height: auto;">
+            <source src="strix-4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <video controls style="max-width: 50%; height: auto;">
+              <source src="strix-5.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+    </div>
+    
+    <h2>Tech Stack</h2>
+    <div class="tech-tags">
+      <span>Manual RC Flight</span>
+      <span>2200KV Motor</span>
+      <span>40A ESC</span>
+      <span>Scratch Build</span>
+      <span>3S LiPo</span>
+      <span>RC Servos</span>
+    </div>
+
+    <a href="index.html" class="btn">⬅ Back to Portfolio</a>
+  </section>
+
+</body>
+</html>
