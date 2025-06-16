@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arka's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="pattern-overlay"></div>
+    <div class="hero-inner">
+      <!-- Left -->
+      <div class="hero-left">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
+        <h1>ARKA MANNA</h1>
+        <h2>I am a<span id="dynamic-text"></span></h2>
+        <div class="social-handles">
+          <a href="https://www.instagram.com/arka_r0b0_n3rd/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/Arka-Manna" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <div class="skills-hero">
+          <div class="skills-box">
+            <h3>💻 Core Skills</h3>
+            <ul>
+              <li>ROS, OpenCV, Python</li>
+              <li>SOLIDWORKS, Ansys Fluent</li>
+              <li>IoT, Web Control Systems</li>
+            </ul>
+          </div>
+          <div class="skills-box">
+            <h3>🤝 Soft Skills</h3>
+            <ul>
+              <li>Team Management</li>
+              <li>Product Ideation</li>
+              <li>Technical Documentation</li>
+            </ul>
+          </div>
+        </div>
+        
+        
+      </div>
+      <!-- Right -->
+      <div class="hero-right">
+        <div class="slider">
+          <div class="slide active"><img src="project1.jpg" alt="Project 1" /></div>
+          <div class="slide"><img src="project2.jpg" alt="Project 2" /></div>
+          <div class="slide"><img src="project3.jpg" alt="Project 3" /></div>
+          <div class="slide"><img src="project5.jpg" alt="Project 4" /></div>
+          <div class="slide"><img src="strix-1.jpg" alt="Project 5" /></div>
+          <div class="slide"><img src="wifi-clock-1.jpg" alt="Project 6" /></div>
+          <div class="slide"><img src="twinboom.jpg" alt="Project 7" /></div>
+          <div class="slide"><img src="webserver-car.jpg" alt="Project 8" /></div>
+          <div class="slide"><img src="esp-now-remote.jpg" alt="Project 9" /></div>
+          <div class="slide"><img src="otto.jpg" alt="Project 10" /></div>
+          <div class="slide"><img src="prismatic-bot.jpg" alt="Project 11" /></div>
+          <div class="slide"><img src="plane.jpg" alt="Project 12" /></div>
+          <div class="slide"><img src="irrigation-2.jpg" alt="Project 13" /></div>
+          <div class="slide"><img src="accident-detection.jpg" alt="Project 2" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <p>
+        I'm Arka Manna, a passionate Mechanical Engineering student with a deep love for robotics, UAVs, and embedded systems. I enjoy building tech that solves real problems — from autonomous bots to smart systems.
+      </p>
+      <p>
+        I believe in learning by doing, and my projects reflect creativity, precision, and hands-on skills. Whether it's designing line-followers, coding ESP-based systems, or crafting RC aircraft, I love every step of building something from scratch.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+      
+
+      <div class="project-card">
+        <img src="accident-detection.jpg" alt="Accident Detection" />
+        <div class="project-content">
+          <h3>Accident Detection</h3>
+          <p>Real-time crash detection and alert system using sensors and IoT.</p>
+          <a href="project-accident.html" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="webserver-car.jpg" alt="Webserver Car" />
+        <div class="project-content">
+          <h3>Webserver Car</h3>
+          <p>WiFi-controlled car with ESP32 using onboard web interface.</p>
+          <a href="project-webserver.html" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="esp-now-remote.jpg" alt="ESP Now Remote" />
+        <div class="project-content">
+          <h3>ESP Now Remote</h3>
+          <p>Low-latency wireless communication using ESP-NOW for controlling bots.</p>
+          <a href="project-espnow.html" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="otto.jpg" alt="Otto" />
+        <div class="project-content">
+          <h3>Otto</h3>
+          <p>Open-source humanoid robot built for learning and exploring robotics basics.</p>
+          <a href="project-otto.html" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="irrigation-2.jpg" alt="Smart Irrigation System" />
+        <div class="project-content">
+          <h3>Smart Irrigation</h3>
+          <p>Soil-moisture-driven irrigation system powered by ESP and sensor logic.</p>
+          <a href="project-irrigation.html" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="cessna-1.jpg" alt="UAV" />
+        <div class="project-content">
+          <h3>UAV RVPlane</h3>
+          <p>Remote controlled aircraft project with custom foam wing and electronics.</p>
+          <a href="project-cessna-uav.html" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <!-- Twin Boom Aircraft -->
+      <div class="project-card">
+        <img src="twinboom.jpg" alt="Twin Boom Aircraft">
+        <div class="project-content">
+          <h3>Twin Boom Aircraft</h3>
+          <p>RC aircraft with tail booms for increased stability and payload space.</p>
+          <a href="project-twinboom.html" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <!-- STRIX Surveillance UAV -->
+      <div class="project-card">
+        <img src="strix-1.jpg" alt="STRIX UAV">
+        <div class="project-content">
+          <h3>STRIX – Fixed Wing UAV</h3>
+          <p>Foam-based high endurance UAV for aerial mapping and ISR missions.</p>
+          <a href="project-strix.html" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <!-- Autonomous Line Follower -->
+      <div class="project-card">
+        <img src="linefollower-1.jpg" alt="Line Follower Bot">
+        <div class="project-content">
+          <h3>Line Follower Bot</h3>
+          <p>PID-tuned robot with ESP32, IR array, OLED & TB6612FNG driver.</p>
+          <a href="project-linefollower.html" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <!-- Hovercraft -->
+      <div class="project-card">
+        <img src="hover-1.jpg" alt="Hovercraft Prototype">
+        <div class="project-content">
+          <h3>RC Hovercraft</h3>
+          <p>Dual-motor hovercraft with lift/thrust separation, controlled via nRF.</p>
+          <a href="project-hovercraft.html" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <!-- WiFi Clock -->
+      <div class="project-card">
+        <img src="wifi-clock.jpg" alt="Smart WiFi Clock">
+        <div class="project-content">
+          <h3>WiFi Clock</h3>
+          <p>ESP8266-powered clock with NTP sync, web-config & LED display.</p>
+          <a href="project-wifi-clock.html" class="btn">View Project</a>
+        </div>
+      </div>
+
+      <!-- Foam Glider -->
+      <div class="project-card">
+        <img src="glider.jpg" alt="Hand-launched Glider">
+        <div class="project-content">
+          <h3>RC Foam Glider</h3>
+          <p>Manually launched glider with elevon control and lightweight airframe.</p>
+          <a href="project-glider.html" class="btn">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out for collaborations, questions, or just to say hi!</p>
+    <div class="contact-details">
+      <p><i class="fas fa-envelope"></i> arkmanna20@gmail.com</p>
+      <p><i class="fab fa-github"></i> <a href="https://github.com/Arka-Manna" target="_blank">github.com/Arka-Manna</a></p>
+      <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/arka_r0b0_n3rd/" target="_blank">@arka_r0b0_n3rd</a></p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
