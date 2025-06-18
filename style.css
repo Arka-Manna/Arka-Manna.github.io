@@ -96,8 +96,8 @@ a {
   background-color: #000;
   display: block;
   object-fit: contain;
+  object-position: top center;
 }
-
 
 /* Skills Strip in Hero */
 .skills-hero {
@@ -276,32 +276,32 @@ a {
   text-decoration: underline;
 }
 
-/* Responsive for Mobile */
+/* ✅ Mobile Fixes */
 @media (max-width: 768px) {
   .hero-inner {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 20px 15px;
+    padding: 30px 20px;
     height: auto;
   }
 
   .hero-right {
-    display: none;
+    display: none; /* ✅ Hide slider on mobile */
+  }
+
+  .hero-left {
+    max-width: 100%;
+    text-align: center;
   }
 
   .profile-pic {
     width: 160px;
     height: auto;
     margin-top: 20px;
-    margin-bottom: 20px;
     object-fit: contain;
     object-position: top center;
-  }
-
-  .hero-left {
-    max-width: 100%;
-    text-align: center;
+    border-radius: 15px;
   }
 
   .hero-left h1 {
