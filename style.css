@@ -87,16 +87,17 @@ a {
 
 /* Profile Picture */
 .profile-pic {
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  margin-top: 20px;
   border: 1px solid #fff;
-  margin-bottom: 20px;
-  object-fit: contain;
-  object-position: top center;
   border-radius: 15px;
   background-color: #000;
-  margin-top: 20px;
+  display: block;
+  object-fit: contain;
 }
+
 
 /* Skills Strip in Hero */
 .skills-hero {
