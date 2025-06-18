@@ -296,14 +296,14 @@ a {
   }
 
   .profile-pic {
-    width: 160px;
-    height: auto;
-    margin-top: 20px;
-    object-fit: contain;
-    object-position: top center;
-    border-radius: 15px;
-  }
-
+  width: 200px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  object-fit: contain;
+  object-position: top center;
+  border-radius: 15px;
+}
   .hero-left h1 {
     font-size: 2rem;
   }
