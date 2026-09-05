@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Monocopter | Arka's Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+
+  <style>
+
+    /* =====================================================
+       MONOCOPTER COLOR SYSTEM
+    ====================================================== */
+
+    :root {
+
+      --mono-accent: #00d9ff;
+
+      --mono-accent-bright: #29e1ff;
+
+      --mono-accent-soft:
+        rgba(0, 217, 255, 0.08);
+
+      --mono-accent-border:
+        rgba(0, 217, 255, 0.30);
+
+      --mono-accent-glow:
+        rgba(0, 217, 255, 0.45);
+
+    }
+
+
+    /* =====================================================
+       PROJECT PAGE
+    ====================================================== */
+
+    .project-detail-page {
+
+      min-height: 100vh;
+
+      padding-top: 100px;
+
+      background:
+
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(0, 217, 255, 0.055),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 85% 75%,
+          rgba(0, 217, 255, 0.035),
+          transparent 30%
+        ),
+
+        #070b0d;
+
+      color: #ffffff;
+
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .project-hero {
+
+      width: min(
+        1200px,
+        calc(100% - 40px)
+      );
+
+      margin: 0 auto;
+
+      padding: 80px 0 70px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1.15fr;
+
+      gap: 70px;
+
+      align-items: center;
+
+    }
+
+
+    .project-hero-info {
+
+      text-align: left;
+
+    }
+
+
+    .project-category {
+
+      display: block;
+
+      margin-bottom: 18px;
+
+      color: var(--mono-accent);
+
+      font-size: 0.72rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+    }
+
+
+    .project-hero h1 {
+
+      margin: 0;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(3.5rem, 7vw, 6.5rem);
+
+      line-height: 0.9;
+
+      letter-spacing: -0.055em;
+
+    }
+
+
+    .project-hero h1 span {
+
+      color: var(--mono-accent);
+
+    }
+
+
+    .project-tagline {
+
+      max-width: 560px;
+
+      margin-top: 28px;
+
+      color: #929c9b;
+
+      font-size: 1.05rem;
+
+      line-height: 1.7;
+
+    }
+
+
+    /* =====================================================
+       STATUS
+    ====================================================== */
+
+    .project-detail-status {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      margin-top: 28px;
+
+      padding: 8px 13px;
+
+      border:
+        1px solid
+        var(--mono-accent-border);
+
+      border-radius: 20px;
+
+      background:
+        var(--mono-accent-soft);
+
+      color: var(--mono-accent);
+
+      font-size: 0.65rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.1em;
+
+    }
+
+
+    .project-detail-status .status-dot {
+
+      width: 7px;
+
+      height: 7px;
+
+      border-radius: 50%;
+
+      background:
+        var(--mono-accent);
+
+      box-shadow:
+        0 0 9px
+        var(--mono-accent-glow);
+
+    }
+
+
+    /* =====================================================
+       HERO IMAGE
+    ====================================================== */
+
+    .project-hero-image {
+
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 16px;
+
+      border:
+        1px solid #202d30;
+
+      background: #0c1214;
+
+      box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.35);
+
+    }
+
+
+    .project-hero-image::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      border:
+        1px solid
+        rgba(0, 217, 255, 0.10);
+
+      border-radius: inherit;
+
+    }
+
+
+    .project-hero-image img {
+
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 10;
+
+      object-fit: cover;
+
+    }
+
+
+    /* =====================================================
+       TECH TAGS
+    ====================================================== */
+
+    .project-hero-tech {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 28px;
+
+    }
+
+
+    .project-hero-tech span {
+
+      padding: 7px 11px;
+
+      border:
+        1px solid #263338;
+
+      border-radius: 5px;
+
+      color: #8b9694;
+
+      background:
+        rgba(0, 217, 255, 0.015);
+
+      font-size: 0.65rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.03em;
+
+      transition:
+        border-color 0.25s ease,
+        color 0.25s ease;
+
+    }
+
+
+    .project-hero-tech span:hover {
+
+      border-color:
+        var(--mono-accent-border);
+
+      color:
+        var(--mono-accent);
+
+    }
+
+
+    /* =====================================================
+       MAIN CONTENT
+    ====================================================== */
+
+    .project-detail-content {
+
+      width: min(
+        1000px,
+        calc(100% - 40px)
+      );
+
+      margin: 0 auto;
+
+      padding-bottom: 120px;
+
+    }
+
+
+    .project-detail-section {
+
+      padding: 70px 0;
+
+      border-top:
+        1px solid #182326;
+
+    }
+
+
+    .project-detail-section:first-child {
+
+      border-top: none;
+
+    }
+
+
+    .project-detail-label {
+
+      display: block;
+
+      margin-bottom: 15px;
+
+      color: var(--mono-accent);
+
+      font-size: 0.68rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+    }
+
+
+    .project-detail-section h2 {
+
+      margin: 0 0 25px;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(2rem, 4vw, 3rem);
+
+      line-height: 1;
+
+      letter-spacing: -0.035em;
+
+    }
+
+
+    .project-detail-section p {
+
+      max-width: 850px;
+
+      margin-bottom: 18px;
+
+      color: #929c9b;
+
+      font-size: 1rem;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       INFORMATION GRID
+    ====================================================== */
+
+    .project-info-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 20px;
+
+      margin-top: 35px;
+
+    }
+
+
+    .project-info-box {
+
+      padding: 25px;
+
+      border:
+        1px solid #202d30;
+
+      border-radius: 12px;
+
+      background: #0c1214;
+
+      transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+
+    }
+
+
+    .project-info-box:hover {
+
+      border-color:
+        var(--mono-accent-border);
+
+      transform:
+        translateY(-3px);
+
+    }
+
+
+    .project-info-box h3 {
+
+      margin-bottom: 15px;
+
+      color: #ffffff;
+
+      font-size: 1rem;
+
+    }
+
+
+    .project-info-box ul {
+
+      margin: 0;
+
+      padding-left: 18px;
+
+      color: #899493;
+
+    }
+
+
+    .project-info-box li {
+
+      margin-bottom: 9px;
+
+      font-size: 0.9rem;
+
+      line-height: 1.6;
+
+    }
+
+
+    .project-info-box li::marker {
+
+      color:
+        var(--mono-accent);
+
+    }
+
+
+    /* =====================================================
+       GALLERY
+    ====================================================== */
+
+    .project-gallery {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 18px;
+
+      margin-top: 35px;
+
+    }
+
+
+    .project-gallery img {
+
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 10;
+
+      object-fit: cover;
+
+      border-radius: 12px;
+
+      border:
+        1px solid #202d30;
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    }
+
+
+    .project-gallery img:hover {
+
+      transform:
+        translateY(-4px);
+
+      border-color:
+        var(--mono-accent-border);
+
+      box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.35);
+
+    }
+
+
+    /* =====================================================
+       SPECIFICATIONS
+    ====================================================== */
+
+    .project-specs {
+
+      width: 100%;
+
+      margin-top: 30px;
+
+      border-collapse:
+        collapse;
+
+    }
+
+
+    .project-specs tr {
+
+      border-bottom:
+        1px solid #182326;
+
+    }
+
+
+    .project-specs tr:hover {
+
+      background:
+        rgba(0, 217, 255, 0.025);
+
+    }
+
+
+    .project-specs td {
+
+      padding: 15px 10px;
+
+      color: #929c9b;
+
+      font-size: 0.9rem;
+
+      vertical-align: top;
+
+    }
+
+
+    .project-specs td:first-child {
+
+      width: 35%;
+
+      color: #ffffff;
+
+      font-weight: 700;
+
+    }
+
+
+    /* =====================================================
+       VIDEO
+    ====================================================== */
+
+    .project-video {
+
+      display: block;
+
+      width: 100%;
+
+      margin-top: 35px;
+
+      border-radius: 14px;
+
+      border:
+        1px solid #202d30;
+
+      background: #000;
+
+    }
+
+
+    /* =====================================================
+       ACTION BUTTONS
+    ====================================================== */
+
+    .project-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 40px;
+
+    }
+
+
+    .project-action {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      padding: 11px 18px;
+
+      border:
+        1px solid
+        var(--mono-accent);
+
+      border-radius: 5px;
+
+      color:
+        var(--mono-accent);
+
+      background: transparent;
+
+      font-size: 0.75rem;
+
+      font-weight: 800;
+
+      text-decoration: none;
+
+      transition:
+        all 0.25s ease;
+
+    }
+
+
+    .project-action:hover {
+
+      background:
+        var(--mono-accent);
+
+      color: #06100b;
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 8px 25px
+        rgba(0, 217, 255, 0.18);
+
+    }
+
+
+    .project-action.secondary {
+
+      border-color: #29373a;
+
+      color: #929c9b;
+
+    }
+
+
+    .project-action.secondary:hover {
+
+      border-color:
+        var(--mono-accent);
+
+      color:
+        var(--mono-accent);
+
+      background: transparent;
+
+      box-shadow: none;
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 800px) {
+
+      .project-detail-page {
+
+        padding-top: 80px;
+
+      }
+
+
+      .project-hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding-top: 50px;
+
+      }
+
+
+      .project-hero h1 {
+
+        font-size:
+          clamp(3rem, 15vw, 5rem);
+
+      }
+
+
+      .project-info-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .project-gallery {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .project-hero,
+      .project-detail-content {
+
+        width:
+          min(100% - 28px, 1200px);
+
+      }
+
+
+      .project-detail-section {
+
+        padding: 50px 0;
+
+      }
+
+
+      .project-hero {
+
+        padding-bottom: 45px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <nav class="navbar">
+
+      <a href="index.html" class="brand">
+
+        <span class="brand-logo">
+          A
+        </span>
+
+        <span>
+          Arka's <strong>Portfolio</strong>
+        </span>
+
+      </a>
+
+
+      <div class="nav-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a
+          href="projects.html"
+          class="active"
+        >
+          Projects
+        </a>
+
+        <a href="experience.html">
+          Experience
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation menu"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       MONOCOPTER PROJECT
+  ====================================================== -->
+
+  <main class="project-detail-page">
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section class="project-hero">
+
+
+      <div class="project-hero-info">
+
+
+        <span class="project-category">
+          14 / AEROSPACE
+        </span>
+
+
+        <h1>
+          MONO<span>COPTER</span>
+        </h1>
+
+
+        <p class="project-tagline">
+
+          An experimental single-rotor aerial platform
+          exploring unconventional flight control,
+          embedded stabilization and custom flight-control
+          hardware.
+
+        </p>
+
+
+        <div class="project-detail-status">
+
+          <span class="status-dot"></span>
+
+          COMPLETED
+
+        </div>
+
+
+        <div class="project-hero-tech">
+
+          <span>
+            RP2040
+          </span>
+
+          <span>
+            MPU9250
+          </span>
+
+          <span>
+            dRehmFlight
+          </span>
+
+          <span>
+            RC CONTROL
+          </span>
+
+          <span>
+            SG90
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="project-hero-image">
+
+        <img
+          src="monocopter/monocopter1.webp"
+          alt="Monocopter aerial platform"
+        >
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         CONTENT
+    ==================================================== -->
+
+    <div class="project-detail-content">
+
+
+      <!-- =================================================
+           OVERVIEW
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          01 / OVERVIEW
+        </span>
+
+
+        <h2>
+          One rotor.
+          A completely different flight problem.
+        </h2>
+
+
+        <p>
+
+          The Monocopter is an experimental aerial platform
+          based on the single-rotor monocopter concept.
+          Unlike conventional multirotors, the aircraft uses
+          one primary rotor and aerodynamic control surfaces
+          to influence its attitude.
+
+        </p>
+
+
+        <p>
+
+          The project combines an unconventional airframe
+          with embedded flight-control electronics,
+          inertial sensing, servo actuation and RC input.
+
+        </p>
+
+
+        <p>
+
+          The project is based on the
+          dRehmFlight-Monocopter concept, which uses a
+          single rotor with air vanes for position control.
+          :contentReference[oaicite:1]{index=1}
+
+        </p>
+
+      </section>
+
+
+
+      <!-- =================================================
+           CONCEPT
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          02 / FLIGHT CONCEPT
+        </span>
+
+
+        <h2>
+          Controlling an unstable aircraft.
+        </h2>
+
+
+        <div class="project-info-grid">
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Flight System
+            </h3>
+
+            <ul>
+
+              <li>
+                Single primary rotor for lift and propulsion.
+              </li>
+
+              <li>
+                Aerodynamic vanes used for attitude control.
+              </li>
+
+              <li>
+                Inertial measurements used for stabilization.
+              </li>
+
+              <li>
+                Servo-controlled flight surfaces.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Control Approach
+            </h3>
+
+            <ul>
+
+              <li>
+                IMU-based attitude estimation.
+              </li>
+
+              <li>
+                Flight-control loop running on a microcontroller.
+              </li>
+
+              <li>
+                RC commands supplied by the receiver.
+              </li>
+
+              <li>
+                Control mixing between pilot input and stabilization.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           ELECTRONICS
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          03 / ELECTRONICS
+        </span>
+
+
+        <h2>
+          Building the flight controller.
+        </h2>
+
+
+        <p>
+
+          A major part of the project involved adapting
+          the flight-control architecture to an RP2040-based
+          controller.
+
+        </p>
+
+
+        <p>
+
+          The system uses inertial sensing to obtain the
+          aircraft's motion information and converts that
+          information into servo and ESC control outputs.
+
+        </p>
+
+
+        <div class="project-gallery">
+
+
+          <img
+            src="monocopter/monocopter2.webp"
+            alt="Monocopter flight controller electronics"
+            loading="lazy"
+          >
+
+
+          <img
+            src="monocopter/monocopter3.webp"
+            alt="Monocopter flight controller"
+            loading="lazy"
+          >
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           HARDWARE
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          04 / HARDWARE
+        </span>
+
+
+        <h2>
+          System architecture.
+        </h2>
+
+
+        <table class="project-specs">
+
+
+          <tr>
+
+            <td>
+              Flight Controller
+            </td>
+
+            <td>
+              Raspberry Pi Pico W / RP2040
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              IMU
+            </td>
+
+            <td>
+              MPU9250 inertial measurement unit
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Receiver
+            </td>
+
+            <td>
+              FlySky FS-iA6B
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Servo Actuation
+            </td>
+
+            <td>
+              SG90 micro servos
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              ESC
+            </td>
+
+            <td>
+              SimonK 30A ESC
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Propulsion
+            </td>
+
+            <td>
+              BLDC motor with 3S LiPo power system
+            </td>
+
+          </tr>
+
+        </table>
+
+      </section>
+
+
+
+      <!-- =================================================
+           SOFTWARE
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          05 / SOFTWARE
+        </span>
+
+
+        <h2>
+          Flight-control software.
+        </h2>
+
+
+        <p>
+
+          The flight-control system is based around the
+          dRehmFlight architecture, with the controller
+          responsible for reading the IMU, estimating
+          aircraft attitude and generating actuator commands.
+
+        </p>
+
+
+        <p>
+
+          The project also involved adapting
+          Teensy-oriented flight-control code for the
+          RP2040 platform and working through hardware
+          interface and library compatibility.
+
+        </p>
+
+
+        <div class="project-hero-tech">
+
+          <span>
+            dRehmFlight
+          </span>
+
+          <span>
+            Madgwick Filter
+          </span>
+
+          <span>
+            MPU9250
+          </span>
+
+          <span>
+            RP2040
+          </span>
+
+          <span>
+            PWM
+          </span>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           TESTING
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          06 / TESTING
+        </span>
+
+
+        <h2>
+          Test. Tune. Fly.
+        </h2>
+
+
+        <p>
+
+          Development involved testing the inertial
+          measurement system, receiver input, servo
+          outputs and flight-control software individually
+          before integrating the complete system.
+
+        </p>
+
+
+        <div class="project-gallery">
+
+
+          <img
+            src="monocopter/testing.webp"
+            alt="Monocopter testing"
+            loading="lazy"
+          >
+
+
+          <img
+            src="monocopter/flight-test.webp"
+            alt="Monocopter flight testing"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <!-- Add video when available -->
+
+        <!--
+
+        <video
+          class="project-video"
+          controls
+          preload="metadata"
+        >
+
+          <source
+            src="monocopter/monocopter-demo.mp4"
+            type="video/mp4"
+          >
+
+          Your browser does not support
+          the video tag.
+
+        </video>
+
+        -->
+
+      </section>
+
+
+
+      <!-- =================================================
+           RESULT
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          07 / RESULT
+        </span>
+
+
+        <h2>
+          An unconventional flight platform.
+        </h2>
+
+
+        <p>
+
+          The completed project demonstrates the integration
+          of an unconventional aircraft configuration with
+          embedded flight-control electronics and RC
+          actuation.
+
+        </p>
+
+
+        <p>
+
+          The project provided hands-on experience with
+          flight stabilization, inertial sensing, servo
+          control, receiver interfaces and adapting
+          flight-control software to a different
+          microcontroller architecture.
+
+        </p>
+
+      </section>
+
+
+
+      <!-- =================================================
+           ACTIONS
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <div class="project-actions">
+
+
+          <a
+            href="projects.html"
+            class="project-action secondary"
+          >
+
+            <i class="fas fa-arrow-left"></i>
+
+            Back to Projects
+
+          </a>
+
+
+          <a
+            href="https://github.com/abritten/dRehmFlight-Monocopter"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-action"
+          >
+
+            <i class="fab fa-github"></i>
+
+            Reference Project
+
+          </a>
+
+        </div>
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

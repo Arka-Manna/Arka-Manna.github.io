@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>RC Buggy | Arka's Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+
+  <style>
+
+    /* =====================================================
+       RC BUGGY COLOR SYSTEM
+    ====================================================== */
+
+    :root {
+
+      --project-accent: #ff5a36;
+
+      --project-accent-bright: #ff805f;
+
+      --project-accent-soft:
+        rgba(255, 90, 54, 0.08);
+
+      --project-accent-border:
+        rgba(255, 90, 54, 0.30);
+
+      --project-accent-glow:
+        rgba(255, 90, 54, 0.45);
+
+    }
+
+
+    /* =====================================================
+       PROJECT PAGE
+    ====================================================== */
+
+    .project-detail-page {
+
+      min-height: 100vh;
+
+      padding-top: 100px;
+
+      background:
+
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(255, 90, 54, 0.06),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 85% 75%,
+          rgba(255, 90, 54, 0.035),
+          transparent 30%
+        ),
+
+        #070b0d;
+
+      color: #ffffff;
+
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .project-hero {
+
+      width: min(
+        1200px,
+        calc(100% - 40px)
+      );
+
+      margin: 0 auto;
+
+      padding: 80px 0 70px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1.15fr;
+
+      gap: 70px;
+
+      align-items: center;
+
+    }
+
+
+    .project-hero-info {
+
+      text-align: left;
+
+    }
+
+
+    .project-category {
+
+      display: block;
+
+      margin-bottom: 18px;
+
+      color:
+        var(--project-accent);
+
+      font-size: 0.72rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+    }
+
+
+    .project-hero h1 {
+
+      margin: 0;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(3.2rem, 6vw, 6rem);
+
+      line-height: 0.9;
+
+      letter-spacing: -0.055em;
+
+    }
+
+
+    .project-hero h1 span {
+
+      color:
+        var(--project-accent);
+
+    }
+
+
+    .project-tagline {
+
+      max-width: 560px;
+
+      margin-top: 28px;
+
+      color: #929c9b;
+
+      font-size: 1.05rem;
+
+      line-height: 1.7;
+
+    }
+
+
+    /* =====================================================
+       STATUS
+    ====================================================== */
+
+    .project-detail-status {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      margin-top: 28px;
+
+      padding: 8px 13px;
+
+      border:
+        1px solid
+        var(--project-accent-border);
+
+      border-radius: 20px;
+
+      background:
+        var(--project-accent-soft);
+
+      color:
+        var(--project-accent);
+
+      font-size: 0.65rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.1em;
+
+    }
+
+
+    .project-detail-status .status-dot {
+
+      width: 7px;
+
+      height: 7px;
+
+      border-radius: 50%;
+
+      background:
+        var(--project-accent);
+
+      box-shadow:
+        0 0 9px
+        var(--project-accent-glow);
+
+    }
+
+
+    /* =====================================================
+       HERO IMAGE
+    ====================================================== */
+
+    .project-hero-image {
+
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 16px;
+
+      border:
+        1px solid #3a2924;
+
+      background: #0c1214;
+
+      box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.35);
+
+    }
+
+
+    .project-hero-image::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      border:
+        1px solid
+        rgba(255, 90, 54, 0.10);
+
+      border-radius: inherit;
+
+    }
+
+
+    .project-hero-image img {
+
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 10;
+
+      object-fit: cover;
+
+    }
+
+
+    /* =====================================================
+       TECH TAGS
+    ====================================================== */
+
+    .project-hero-tech {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 28px;
+
+    }
+
+
+    .project-hero-tech span {
+
+      padding: 7px 11px;
+
+      border:
+        1px solid #3a2c28;
+
+      border-radius: 5px;
+
+      color: #99918e;
+
+      background:
+        rgba(255, 90, 54, 0.015);
+
+      font-size: 0.65rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.03em;
+
+      transition:
+        border-color 0.25s ease,
+        color 0.25s ease;
+
+    }
+
+
+    .project-hero-tech span:hover {
+
+      border-color:
+        var(--project-accent-border);
+
+      color:
+        var(--project-accent);
+
+    }
+
+
+    /* =====================================================
+       CONTENT
+    ====================================================== */
+
+    .project-detail-content {
+
+      width: min(
+        1000px,
+        calc(100% - 40px)
+      );
+
+      margin: 0 auto;
+
+      padding-bottom: 120px;
+
+    }
+
+
+    .project-detail-section {
+
+      padding: 70px 0;
+
+      border-top:
+        1px solid #271e1b;
+
+    }
+
+
+    .project-detail-section:first-child {
+
+      border-top: none;
+
+    }
+
+
+    .project-detail-label {
+
+      display: block;
+
+      margin-bottom: 15px;
+
+      color:
+        var(--project-accent);
+
+      font-size: 0.68rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+    }
+
+
+    .project-detail-section h2 {
+
+      margin: 0 0 25px;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(2rem, 4vw, 3rem);
+
+      line-height: 1;
+
+      letter-spacing: -0.035em;
+
+    }
+
+
+    .project-detail-section p {
+
+      max-width: 850px;
+
+      margin-bottom: 18px;
+
+      color: #929c9b;
+
+      font-size: 1rem;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       INFORMATION GRID
+    ====================================================== */
+
+    .project-info-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 20px;
+
+      margin-top: 35px;
+
+    }
+
+
+    .project-info-box {
+
+      padding: 25px;
+
+      border:
+        1px solid #3a2924;
+
+      border-radius: 12px;
+
+      background: #0c1214;
+
+      transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+
+    }
+
+
+    .project-info-box:hover {
+
+      border-color:
+        var(--project-accent-border);
+
+      transform:
+        translateY(-3px);
+
+    }
+
+
+    .project-info-box h3 {
+
+      margin-bottom: 15px;
+
+      color: #ffffff;
+
+      font-size: 1rem;
+
+    }
+
+
+    .project-info-box ul {
+
+      margin: 0;
+
+      padding-left: 18px;
+
+      color: #899493;
+
+    }
+
+
+    .project-info-box li {
+
+      margin-bottom: 9px;
+
+      font-size: 0.9rem;
+
+      line-height: 1.6;
+
+    }
+
+
+    .project-info-box li::marker {
+
+      color:
+        var(--project-accent);
+
+    }
+
+
+    /* =====================================================
+       ARCHITECTURE
+    ====================================================== */
+
+    .architecture-flow {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 10px;
+
+      margin-top: 40px;
+
+    }
+
+
+    .architecture-node {
+
+      min-width: 125px;
+
+      padding: 15px 17px;
+
+      border:
+        1px solid
+        var(--project-accent-border);
+
+      border-radius: 9px;
+
+      background:
+        var(--project-accent-soft);
+
+      color: #ffffff;
+
+      font-size: 0.75rem;
+
+      font-weight: 800;
+
+      text-align: center;
+
+    }
+
+
+    .architecture-node small {
+
+      display: block;
+
+      margin-top: 5px;
+
+      color: #858f8d;
+
+      font-size: 0.62rem;
+
+      font-weight: 500;
+
+    }
+
+
+    .architecture-arrow {
+
+      color:
+        var(--project-accent);
+
+      font-size: 1.1rem;
+
+    }
+
+
+    /* =====================================================
+       GALLERY
+    ====================================================== */
+
+    .project-gallery {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 18px;
+
+      margin-top: 35px;
+
+    }
+
+
+    .project-gallery img {
+
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 10;
+
+      object-fit: cover;
+
+      border-radius: 12px;
+
+      border:
+        1px solid #3a2924;
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    }
+
+
+    .project-gallery img:hover {
+
+      transform:
+        translateY(-4px);
+
+      border-color:
+        var(--project-accent-border);
+
+      box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.35);
+
+    }
+
+
+    /* =====================================================
+       SPECIFICATIONS
+    ====================================================== */
+
+    .project-specs {
+
+      width: 100%;
+
+      margin-top: 30px;
+
+      border-collapse:
+        collapse;
+
+    }
+
+
+    .project-specs tr {
+
+      border-bottom:
+        1px solid #271e1b;
+
+    }
+
+
+    .project-specs tr:hover {
+
+      background:
+        rgba(255, 90, 54, 0.025);
+
+    }
+
+
+    .project-specs td {
+
+      padding: 15px 10px;
+
+      color: #929c9b;
+
+      font-size: 0.9rem;
+
+      vertical-align: top;
+
+    }
+
+
+    .project-specs td:first-child {
+
+      width: 35%;
+
+      color: #ffffff;
+
+      font-weight: 700;
+
+    }
+
+
+    /* =====================================================
+       TESTING
+    ====================================================== */
+
+    .testing-highlight {
+
+      margin-top: 30px;
+
+      padding: 24px;
+
+      border-left:
+        3px solid
+        var(--project-accent);
+
+      background:
+        var(--project-accent-soft);
+
+      border-radius:
+        0 10px 10px 0;
+
+    }
+
+
+    .testing-highlight strong {
+
+      display: block;
+
+      margin-bottom: 8px;
+
+      color:
+        var(--project-accent);
+
+      font-size: 0.8rem;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .testing-highlight p {
+
+      margin: 0;
+
+      color: #929c9b;
+
+      font-size: 0.92rem;
+
+    }
+
+
+    /* =====================================================
+       ACTIONS
+    ====================================================== */
+
+    .project-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 40px;
+
+    }
+
+
+    .project-action {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      padding: 11px 18px;
+
+      border:
+        1px solid
+        var(--project-accent);
+
+      border-radius: 5px;
+
+      color:
+        var(--project-accent);
+
+      background: transparent;
+
+      font-size: 0.75rem;
+
+      font-weight: 800;
+
+      text-decoration: none;
+
+      transition:
+        all 0.25s ease;
+
+    }
+
+
+    .project-action:hover {
+
+      background:
+        var(--project-accent);
+
+      color: #160904;
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 8px 25px
+        rgba(255, 90, 54, 0.18);
+
+    }
+
+
+    .project-action.secondary {
+
+      border-color: #39302c;
+
+      color: #929c9b;
+
+    }
+
+
+    .project-action.secondary:hover {
+
+      border-color:
+        var(--project-accent);
+
+      color:
+        var(--project-accent);
+
+      background: transparent;
+
+      box-shadow: none;
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 800px) {
+
+      .project-detail-page {
+
+        padding-top: 80px;
+
+      }
+
+
+      .project-hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding-top: 50px;
+
+      }
+
+
+      .project-hero h1 {
+
+        font-size:
+          clamp(3rem, 14vw, 5rem);
+
+      }
+
+
+      .project-info-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .project-gallery {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .project-hero,
+      .project-detail-content {
+
+        width:
+          min(100% - 28px, 1200px);
+
+      }
+
+
+      .project-detail-section {
+
+        padding: 50px 0;
+
+      }
+
+
+      .architecture-flow {
+
+        flex-direction: column;
+
+      }
+
+
+      .architecture-arrow {
+
+        transform:
+          rotate(90deg);
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <nav class="navbar">
+
+      <a href="index.html" class="brand">
+
+        <span class="brand-logo">
+          A
+        </span>
+
+        <span>
+          Arka's <strong>Portfolio</strong>
+        </span>
+
+      </a>
+
+
+      <div class="nav-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a
+          href="projects.html"
+          class="active"
+        >
+          Projects
+        </a>
+
+        <a href="experience.html">
+          Experience
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation menu"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       RC BUGGY
+  ====================================================== -->
+
+  <main class="project-detail-page">
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section class="project-hero">
+
+
+      <div class="project-hero-info">
+
+
+        <span class="project-category">
+          21 / RC VEHICLES
+        </span>
+
+
+        <h1>
+          RC
+          <span>BUGGY</span>
+        </h1>
+
+
+        <p class="project-tagline">
+
+          A custom-built radio-controlled buggy developed
+          as a hands-on platform for exploring mechanical
+          design, drivetrain integration, electronics and
+          remote vehicle control.
+
+        </p>
+
+
+        <div class="project-detail-status">
+
+          <span class="status-dot"></span>
+
+          COMPLETED
+
+        </div>
+
+
+        <div class="project-hero-tech">
+
+          <span>
+            RC VEHICLE
+          </span>
+
+          <span>
+            MECHANICAL DESIGN
+          </span>
+
+          <span>
+            MOTOR CONTROL
+          </span>
+
+          <span>
+            RADIO CONTROL
+          </span>
+
+          <span>
+            PROTOTYPING
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="project-hero-image">
+
+        <img
+          src="rc_buggy/rc-buggy.webp"
+          alt="RC Buggy"
+        >
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         CONTENT
+    ==================================================== -->
+
+    <div class="project-detail-content">
+
+
+      <!-- =================================================
+           OVERVIEW
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          01 / OVERVIEW
+        </span>
+
+
+        <h2>
+          Built to move.
+          Designed to learn.
+        </h2>
+
+
+        <p>
+
+          The RC Buggy is a custom-built ground vehicle
+          created to explore the complete development
+          process of a small radio-controlled machine.
+
+        </p>
+
+
+        <p>
+
+          The project combines mechanical construction,
+          drivetrain integration, electronics and RC
+          control into a single working platform.
+
+        </p>
+
+
+        <p>
+
+          The focus was not simply getting the vehicle
+          moving, but understanding how the mechanical and
+          electronic systems work together to produce a
+          responsive RC vehicle.
+
+        </p>
+
+      </section>
+
+
+
+      <!-- =================================================
+           DESIGN
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          02 / DESIGN
+        </span>
+
+
+        <h2>
+          A compact platform
+          built around the drivetrain.
+        </h2>
+
+
+        <div class="project-info-grid">
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Mechanical System
+            </h3>
+
+            <ul>
+
+              <li>
+                Custom vehicle chassis.
+              </li>
+
+              <li>
+                Wheel-based ground mobility.
+              </li>
+
+              <li>
+                Motor and drivetrain integration.
+              </li>
+
+              <li>
+                Compact component arrangement.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Control System
+            </h3>
+
+            <ul>
+
+              <li>
+                Radio-controlled operation.
+              </li>
+
+              <li>
+                Throttle control.
+              </li>
+
+              <li>
+                Steering control.
+              </li>
+
+              <li>
+                Electronic speed control.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           SYSTEM ARCHITECTURE
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          03 / SYSTEM
+        </span>
+
+
+        <h2>
+          From transmitter
+          to wheels.
+        </h2>
+
+
+        <p>
+
+          The vehicle uses a conventional RC architecture
+          in which control commands are transmitted from
+          the pilot's transmitter to the receiver and then
+          converted into motor and steering actions.
+
+        </p>
+
+
+        <div class="architecture-flow">
+
+
+          <div class="architecture-node">
+
+            RC TRANSMITTER
+
+            <small>
+              Pilot input
+            </small>
+
+          </div>
+
+
+          <div class="architecture-arrow">
+            →
+          </div>
+
+
+          <div class="architecture-node">
+
+            RECEIVER
+
+            <small>
+              Signal input
+            </small>
+
+          </div>
+
+
+          <div class="architecture-arrow">
+            →
+          </div>
+
+
+          <div class="architecture-node">
+
+            CONTROL
+
+            <small>
+              Signal processing
+            </small>
+
+          </div>
+
+
+          <div class="architecture-arrow">
+            →
+          </div>
+
+
+          <div class="architecture-node">
+
+            MOTOR / STEERING
+
+            <small>
+              Actuation
+            </small>
+
+          </div>
+
+
+          <div class="architecture-arrow">
+            →
+          </div>
+
+
+          <div class="architecture-node">
+
+            WHEELS
+
+            <small>
+              Vehicle motion
+            </small>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           HARDWARE
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          04 / HARDWARE
+        </span>
+
+
+        <h2>
+          The hardware
+          behind the buggy.
+        </h2>
+
+
+        <table class="project-specs">
+
+
+          <tr>
+
+            <td>
+              Vehicle Type
+            </td>
+
+            <td>
+              Radio-controlled ground vehicle
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Drive System
+            </td>
+
+            <td>
+              Electrically powered drivetrain
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Control
+            </td>
+
+            <td>
+              RC transmitter and receiver
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Steering
+            </td>
+
+            <td>
+              RC-controlled steering system
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Chassis
+            </td>
+
+            <td>
+              Custom-built prototype chassis
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Status
+            </td>
+
+            <td>
+              Completed and tested
+            </td>
+
+          </tr>
+
+        </table>
+
+      </section>
+
+
+
+      <!-- =================================================
+           MECHANICAL ENGINEERING
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          05 / MECHANICAL DESIGN
+        </span>
+
+
+        <h2>
+          Engineering the machine,
+          not just assembling it.
+        </h2>
+
+
+        <p>
+
+          Building the buggy involved working with the
+          physical constraints of a compact vehicle:
+          component placement, chassis structure, wheel
+          positioning and drivetrain integration.
+
+        </p>
+
+
+        <p>
+
+          The project provided practical experience in
+          turning a concept into a functional mechanical
+          prototype.
+
+        </p>
+
+
+        <div class="project-hero-tech">
+
+          <span>
+            CAD THINKING
+          </span>
+
+          <span>
+            CHASSIS DESIGN
+          </span>
+
+          <span>
+            DRIVETRAIN
+          </span>
+
+          <span>
+            FABRICATION
+          </span>
+
+          <span>
+            PROTOTYPING
+          </span>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           TESTING
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          06 / TESTING
+        </span>
+
+
+        <h2>
+          Build.
+          Test.
+          Improve.
+        </h2>
+
+
+        <p>
+
+          Testing focused on validating the vehicle's
+          movement, control response, steering behaviour
+          and overall mechanical operation.
+
+        </p>
+
+
+        <div class="project-gallery">
+
+
+          <img
+            src="rc_buggy/build.webp"
+            alt="RC Buggy build"
+            loading="lazy"
+          >
+
+
+          <img
+            src="rc_buggy/testing.webp"
+            alt="RC Buggy testing"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="testing-highlight">
+
+          <strong>
+            TESTED SYSTEM
+          </strong>
+
+
+          <p>
+
+            The completed prototype successfully
+            demonstrates the integration of the mechanical
+            platform, propulsion system and RC control.
+
+          </p>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           RESULT
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          07 / RESULT
+        </span>
+
+
+        <h2>
+          A working RC platform
+          from the ground up.
+        </h2>
+
+
+        <p>
+
+          The RC Buggy became a practical exercise in
+          vehicle engineering, combining mechanical
+          construction and electronics into a functional
+          remotely controlled machine.
+
+        </p>
+
+
+        <p>
+
+          It also provided a foundation for experimenting
+          with more advanced RC vehicles and robotic
+          platforms.
+
+        </p>
+
+      </section>
+
+
+
+      <!-- =================================================
+           ACTIONS
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <div class="project-actions">
+
+
+          <a
+            href="projects.html"
+            class="project-action secondary"
+          >
+
+            <i class="fas fa-arrow-left"></i>
+
+            Back to Projects
+
+          </a>
+
+
+        </div>
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

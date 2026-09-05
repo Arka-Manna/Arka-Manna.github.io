@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accident Detection System</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #121212;
+      color: #eee;
+      line-height: 1.6;
+    }
+    .hero-banner {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(90deg, #ff4b1f 0%, #1fddff 100%);
+      color: #000;
+    }
+    .hero-banner h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero-banner p {
+      font-size: 1.2rem;
+    }
+    .project-detail {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .project-detail h2 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: #00e6c3;
+    }
+    .project-detail p,
+    .project-detail li {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: #ccc;
+    }
+    .project-detail ul {
+      padding-left: 20px;
+      list-style: disc;
+    }
+    .project-detail img {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    .tech-tags {
+      margin-top: 20px;
+    }
+    .tech-tags span {
+      display: inline-block;
+      background: #333;
+      color: #00ff99;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 0.9rem;
+    }
+    .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: transparent;
+  border: 2px solid #00ff99;
+  color: #00ff99;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.btn:hover {
+  background: #00ff99;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+    .cmd {
+      background: #222;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #00ff99;
+      font-family: monospace;
+    }
+    pre {
+      background: #1e1e1e;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      color: #eee;
+    }
+    code {
+      font-family: Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero-banner">
+    <h1>Accident Detection System</h1>
+    <p>Real-Time Alert System Powered by MPU6050 & A9G GPS</p>
+  </div>
+
+  <section class="project-detail">
+    <img src="accident-detection.jpg" alt="Accident Detection System" />
+
+    <h2>Project Overview</h2>
+    <p>This project is a real-time accident detection and alert system designed for vehicle safety. It utilizes the MPU6050 motion sensor to detect unusual acceleration or impacts that might indicate a crash. Upon detection, it fetches the GPS location using the A9G module and sends an SMS alert with location data to predefined emergency contacts.</p>
+
+    <h2>How It Works</h2>
+    <ul>
+      <li><strong>Motion Detection:</strong> The MPU6050 continuously monitors acceleration and gyroscopic values. When the resultant force magnitude crosses a predefined threshold, it flags a possible accident.</li>
+      <li><strong>GPS Location Fetching:</strong> After motion is flagged, the A9G module is activated to fetch precise latitude and longitude using <code class="cmd">AT+LOCATION=2</code>.</li>
+      <li><strong>Alert Sending:</strong> Using A9G's GSM capabilities, the system sends an SMS containing the GPS coordinates and a short alert message to a predefined phone number.</li>
+      <li><strong>Emergency Calling:</strong> In critical mode, it can also initiate a voice call to the same number using the <code class="cmd">ATD+91XXXXXXXXXX;</code> command.</li>
+      <li><strong>Failsafe:</strong> The system retries in case GPS fails to lock or if the message sending fails initially.</li>
+    </ul>
+ 
+    <a href="https://photos.app.goo.gl/kyPy6uQAifWcEtu4A" 
+    target="_blank" 
+    class="btn">
+    ▶️ Watch Video on Drive
+ </a>
+
+    <h2>Code Overview</h2>
+
+    <h3>📡 Code 1: A9G GPS Finder</h3>
+    <p><strong>Purpose:</strong> To validate GPS functionality and fetch real-time location data from the A9G module using <code>AT+LOCATION=2</code>.</p>
+    <pre><code>// Initialize UART
+Serial1.begin(115200);
+
+// Enable GPS
+Serial1.println("AT+GPS=1");
+
+// Request location repeatedly
+Serial1.println("AT+LOCATION=2");
+</code></pre>
+    <ul>
+      <li>Initializes UART communication via <code>Serial1</code></li>
+      <li>Sends <code class="cmd">AT+GPS=1</code> to enable GPS tracking</li>
+      <li>Requests GPS data using <code class="cmd">AT+LOCATION=2</code></li>
+      <li>Displays raw GPS output on Serial Monitor for debugging</li>
+    </ul>
+    <p><strong>Use Case:</strong> Standalone script to test GPS signal lock before deploying in main code.</p>
+
+    <h3>📶 Code 2: A9G GSM Test & SMS Sender</h3>
+    <p><strong>Purpose:</strong> To test SIM communication, send SMS, and place calls through the A9G module.</p>
+    <pre><code>// Set SMS to text mode
+Serial1.println("AT+CMGF=1");
+
+// Send test SMS
+Serial1.print("AT+CMGS=\"+91XXXXXXXXXX\"\r");
+Serial1.print("Hi Test Message From Ai Thinker A9 Module");
+Serial1.write(0x1A); // End message (CTRL+Z)
+
+// Make a call
+Serial1.print("ATD+91XXXXXXXXXX;\r");
+</code></pre>
+    <ul>
+      <li>Sends a test SMS: <code class="cmd">Hi Test Message From Ai Thinker A9 Module</code></li>
+      <li>Deletes previous SIM messages using <code class="cmd">AT+CMGD=4,4</code></li>
+      <li>Places a call with <code class="cmd">ATD+91XXXXXXXXXX;</code></li>
+      <li>Configures text mode <code class="cmd">AT+CMGF=1</code> and SIM storage with <code class="cmd">AT+CPMS</code></li>
+      <li>Includes a <code class="cmd">Reply()</code> function for sending dynamic texts</li>
+      <li>Uses <code class="cmd">UpdateSerial()</code> to mirror Serial1 output for debugging</li>
+    </ul>
+    <p><strong>Use Case:</strong> Verify GSM-side functionality — calling, texting, and SIM readiness before full integration.</p>
+    
+    
+   
+    <h2>Tech Stack</h2>
+    <div class="tech-tags">
+      <span>MPU6050</span>
+      <span>A9G GPS/GSM Module</span>
+      <span>Arduino Mega / ESP32</span>
+      <span>UART</span>
+      <span>Arduino IDE</span>
+    </div>
+
+    <a href="index.html" class="btn">⬅ Back to Portfolio</a>
+  </section>
+
+</body>
+</html>

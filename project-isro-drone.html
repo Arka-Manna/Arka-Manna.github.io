@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>ISRO Single-Axis Drone | Arka's Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+
+  <style>
+
+    /* =====================================================
+       PROJECT COLOR SYSTEM
+    ====================================================== */
+
+    :root {
+
+      --project-accent: #28a9ff;
+
+      --project-accent-soft:
+        rgba(40, 169, 255, 0.08);
+
+      --project-accent-border:
+        rgba(40, 169, 255, 0.30);
+
+      --project-accent-glow:
+        rgba(40, 169, 255, 0.45);
+
+    }
+
+
+    /* =====================================================
+       PROJECT PAGE
+    ====================================================== */
+
+    .project-detail-page {
+
+      min-height: 100vh;
+
+      padding-top: 100px;
+
+      background:
+
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(40, 169, 255, 0.055),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 85% 75%,
+          rgba(40, 169, 255, 0.035),
+          transparent 30%
+        ),
+
+        #070b0d;
+
+      color: #ffffff;
+
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .project-hero {
+
+      width: min(
+        1200px,
+        calc(100% - 40px)
+      );
+
+      margin: 0 auto;
+
+      padding: 80px 0 70px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1.15fr;
+
+      gap: 70px;
+
+      align-items: center;
+
+    }
+
+
+    .project-hero-info {
+
+      text-align: left;
+
+    }
+
+
+    .project-category {
+
+      display: block;
+
+      margin-bottom: 18px;
+
+      color: var(--project-accent);
+
+      font-size: 0.72rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+    }
+
+
+    .project-hero h1 {
+
+      margin: 0;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(3rem, 6vw, 5.8rem);
+
+      line-height: 0.92;
+
+      letter-spacing: -0.055em;
+
+    }
+
+
+    .project-hero h1 span {
+
+      color: var(--project-accent);
+
+    }
+
+
+    .project-tagline {
+
+      max-width: 560px;
+
+      margin-top: 28px;
+
+      color: #929c9b;
+
+      font-size: 1.05rem;
+
+      line-height: 1.7;
+
+    }
+
+
+    /* =====================================================
+       STATUS
+    ====================================================== */
+
+    .project-detail-status {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      margin-top: 28px;
+
+      padding: 8px 13px;
+
+      border:
+        1px solid
+        var(--project-accent-border);
+
+      border-radius: 20px;
+
+      background:
+        var(--project-accent-soft);
+
+      color: var(--project-accent);
+
+      font-size: 0.65rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.1em;
+
+    }
+
+
+    .project-detail-status .status-dot {
+
+      width: 7px;
+
+      height: 7px;
+
+      border-radius: 50%;
+
+      background:
+        var(--project-accent);
+
+      box-shadow:
+        0 0 9px
+        var(--project-accent-glow);
+
+    }
+
+
+    /* =====================================================
+       HERO IMAGE
+    ====================================================== */
+
+    .project-hero-image {
+
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 16px;
+
+      border:
+        1px solid #202b31;
+
+      background: #0c1214;
+
+      box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.35);
+
+    }
+
+
+    .project-hero-image::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      border:
+        1px solid
+        rgba(40, 169, 255, 0.10);
+
+      border-radius: inherit;
+
+    }
+
+
+    .project-hero-image img {
+
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 10;
+
+      object-fit: cover;
+
+    }
+
+
+    /* =====================================================
+       TECH TAGS
+    ====================================================== */
+
+    .project-hero-tech {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 28px;
+
+    }
+
+
+    .project-hero-tech span {
+
+      padding: 7px 11px;
+
+      border:
+        1px solid #263239;
+
+      border-radius: 5px;
+
+      color: #8b9694;
+
+      background:
+        rgba(40, 169, 255, 0.015);
+
+      font-size: 0.65rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.03em;
+
+      transition:
+        border-color 0.25s ease,
+        color 0.25s ease;
+
+    }
+
+
+    .project-hero-tech span:hover {
+
+      border-color:
+        var(--project-accent-border);
+
+      color:
+        var(--project-accent);
+
+    }
+
+
+    /* =====================================================
+       CONTENT
+    ====================================================== */
+
+    .project-detail-content {
+
+      width: min(
+        1000px,
+        calc(100% - 40px)
+      );
+
+      margin: 0 auto;
+
+      padding-bottom: 120px;
+
+    }
+
+
+    .project-detail-section {
+
+      padding: 70px 0;
+
+      border-top:
+        1px solid #182329;
+
+    }
+
+
+    .project-detail-section:first-child {
+
+      border-top: none;
+
+    }
+
+
+    .project-detail-label {
+
+      display: block;
+
+      margin-bottom: 15px;
+
+      color: var(--project-accent);
+
+      font-size: 0.68rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+    }
+
+
+    .project-detail-section h2 {
+
+      margin: 0 0 25px;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(2rem, 4vw, 3rem);
+
+      line-height: 1;
+
+      letter-spacing: -0.035em;
+
+    }
+
+
+    .project-detail-section p {
+
+      max-width: 850px;
+
+      margin-bottom: 18px;
+
+      color: #929c9b;
+
+      font-size: 1rem;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       INFORMATION GRID
+    ====================================================== */
+
+    .project-info-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 20px;
+
+      margin-top: 35px;
+
+    }
+
+
+    .project-info-box {
+
+      padding: 25px;
+
+      border:
+        1px solid #202b31;
+
+      border-radius: 12px;
+
+      background: #0c1214;
+
+      transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+
+    }
+
+
+    .project-info-box:hover {
+
+      border-color:
+        var(--project-accent-border);
+
+      transform:
+        translateY(-3px);
+
+    }
+
+
+    .project-info-box h3 {
+
+      margin-bottom: 15px;
+
+      color: #ffffff;
+
+      font-size: 1rem;
+
+    }
+
+
+    .project-info-box ul {
+
+      margin: 0;
+
+      padding-left: 18px;
+
+      color: #899493;
+
+    }
+
+
+    .project-info-box li {
+
+      margin-bottom: 9px;
+
+      font-size: 0.9rem;
+
+      line-height: 1.6;
+
+    }
+
+
+    .project-info-box li::marker {
+
+      color:
+        var(--project-accent);
+
+    }
+
+
+    /* =====================================================
+       GALLERY
+    ====================================================== */
+
+    .project-gallery {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 18px;
+
+      margin-top: 35px;
+
+    }
+
+
+    .project-gallery img {
+
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 10;
+
+      object-fit: cover;
+
+      border-radius: 12px;
+
+      border:
+        1px solid #202b31;
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    }
+
+
+    .project-gallery img:hover {
+
+      transform:
+        translateY(-4px);
+
+      border-color:
+        var(--project-accent-border);
+
+      box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.35);
+
+    }
+
+
+    /* =====================================================
+       SPECIFICATIONS
+    ====================================================== */
+
+    .project-specs {
+
+      width: 100%;
+
+      margin-top: 30px;
+
+      border-collapse:
+        collapse;
+
+    }
+
+
+    .project-specs tr {
+
+      border-bottom:
+        1px solid #182329;
+
+    }
+
+
+    .project-specs tr:hover {
+
+      background:
+        rgba(40, 169, 255, 0.025);
+
+    }
+
+
+    .project-specs td {
+
+      padding: 15px 10px;
+
+      color: #929c9b;
+
+      font-size: 0.9rem;
+
+      vertical-align: top;
+
+    }
+
+
+    .project-specs td:first-child {
+
+      width: 35%;
+
+      color: #ffffff;
+
+      font-weight: 700;
+
+    }
+
+
+    /* =====================================================
+       VIDEO
+    ====================================================== */
+
+    .project-video {
+
+      display: block;
+
+      width: 100%;
+
+      margin-top: 35px;
+
+      border-radius: 14px;
+
+      border:
+        1px solid #202b31;
+
+      background: #000;
+
+    }
+
+
+    /* =====================================================
+       ACTIONS
+    ====================================================== */
+
+    .project-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 40px;
+
+    }
+
+
+    .project-action {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      padding: 11px 18px;
+
+      border:
+        1px solid
+        var(--project-accent);
+
+      border-radius: 5px;
+
+      color:
+        var(--project-accent);
+
+      background: transparent;
+
+      font-size: 0.75rem;
+
+      font-weight: 800;
+
+      text-decoration: none;
+
+      transition:
+        all 0.25s ease;
+
+    }
+
+
+    .project-action:hover {
+
+      background:
+        var(--project-accent);
+
+      color: #06100b;
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 8px 25px
+        rgba(40, 169, 255, 0.18);
+
+    }
+
+
+    .project-action.secondary {
+
+      border-color: #29373d;
+
+      color: #929c9b;
+
+    }
+
+
+    .project-action.secondary:hover {
+
+      border-color:
+        var(--project-accent);
+
+      color:
+        var(--project-accent);
+
+      background: transparent;
+
+      box-shadow: none;
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 800px) {
+
+      .project-detail-page {
+
+        padding-top: 80px;
+
+      }
+
+
+      .project-hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding-top: 50px;
+
+      }
+
+
+      .project-hero h1 {
+
+        font-size:
+          clamp(3rem, 13vw, 5rem);
+
+      }
+
+
+      .project-info-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .project-gallery {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .project-hero,
+      .project-detail-content {
+
+        width:
+          min(100% - 28px, 1200px);
+
+      }
+
+
+      .project-detail-section {
+
+        padding: 50px 0;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <nav class="navbar">
+
+      <a href="index.html" class="brand">
+
+        <span class="brand-logo">
+          A
+        </span>
+
+        <span>
+          Arka's <strong>Portfolio</strong>
+        </span>
+
+      </a>
+
+
+      <div class="nav-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a
+          href="projects.html"
+          class="active"
+        >
+          Projects
+        </a>
+
+        <a href="experience.html">
+          Experience
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation menu"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       PROJECT
+  ====================================================== -->
+
+  <main class="project-detail-page">
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section class="project-hero">
+
+
+      <div class="project-hero-info">
+
+
+        <span class="project-category">
+          15 / UAV
+        </span>
+
+
+        <h1>
+          SINGLE-AXIS
+          <span>DRONE</span>
+        </h1>
+
+
+        <p class="project-tagline">
+
+          An experimental UAV project focused on
+          single-axis flight control, stabilization and
+          aerospace system development.
+
+        </p>
+
+
+        <div class="project-detail-status">
+
+          <span class="status-dot"></span>
+
+          IN DEVELOPMENT
+
+        </div>
+
+
+        <div class="project-hero-tech">
+
+          <span>
+            UAV
+          </span>
+
+          <span>
+            FLIGHT CONTROL
+          </span>
+
+          <span>
+            EMBEDDED
+          </span>
+
+          <span>
+            AEROSPACE
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="project-hero-image">
+
+        <img
+          src="isro-single-axis/isro-drone.webp"
+          alt="ISRO Single-Axis Drone"
+        >
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         CONTENT
+    ==================================================== -->
+
+    <div class="project-detail-content">
+
+
+      <!-- =================================================
+           OVERVIEW
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          01 / OVERVIEW
+        </span>
+
+        <h2>
+          Exploring controlled
+          single-axis flight.
+        </h2>
+
+
+        <p>
+
+          The Single-Axis Drone is an experimental UAV
+          platform being developed to investigate aircraft
+          control around a constrained rotational axis.
+
+        </p>
+
+
+        <p>
+
+          The project focuses on understanding the
+          relationship between propulsion, aerodynamic
+          forces, actuator response and flight-control
+          algorithms.
+
+        </p>
+
+
+        <p>
+
+          The system is being developed as an engineering
+          and experimentation platform rather than as a
+          conventional consumer drone.
+
+        </p>
+
+      </section>
+
+
+
+      <!-- =================================================
+           OBJECTIVES
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          02 / OBJECTIVES
+        </span>
+
+        <h2>
+          What the platform is
+          designed to explore.
+        </h2>
+
+
+        <div class="project-info-grid">
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Flight Control
+            </h3>
+
+            <ul>
+
+              <li>
+                Study single-axis attitude control.
+              </li>
+
+              <li>
+                Investigate actuator response.
+              </li>
+
+              <li>
+                Develop stabilization logic.
+              </li>
+
+              <li>
+                Evaluate control-loop behaviour.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Aerospace Development
+            </h3>
+
+            <ul>
+
+              <li>
+                Explore unconventional UAV architectures.
+              </li>
+
+              <li>
+                Integrate propulsion and control systems.
+              </li>
+
+              <li>
+                Test aerodynamic behaviour.
+              </li>
+
+              <li>
+                Develop an experimental flight platform.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           DEVELOPMENT
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          03 / DEVELOPMENT
+        </span>
+
+        <h2>
+          From concept to flight test.
+        </h2>
+
+
+        <p>
+
+          Development is being carried out through
+          iterative airframe design, electronics
+          integration and controlled testing.
+
+        </p>
+
+
+        <div class="project-gallery">
+
+
+          <img
+            src="isro-single-axis/build-01.webp"
+            alt="Single-Axis Drone development"
+            loading="lazy"
+          >
+
+
+          <img
+            src="isro-single-axis/build-02.webp"
+            alt="Single-Axis Drone prototype"
+            loading="lazy"
+          >
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           SYSTEM
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          04 / SYSTEM
+        </span>
+
+        <h2>
+          System architecture.
+        </h2>
+
+
+        <table class="project-specs">
+
+
+          <tr>
+
+            <td>
+              Platform
+            </td>
+
+            <td>
+              Experimental UAV
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Control
+            </td>
+
+            <td>
+              Single-axis flight-control system
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Propulsion
+            </td>
+
+            <td>
+              Electrically powered propulsion system
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Electronics
+            </td>
+
+            <td>
+              Embedded flight-control electronics
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Development Stage
+            </td>
+
+            <td>
+              Prototype / active development
+            </td>
+
+          </tr>
+
+        </table>
+
+      </section>
+
+
+
+      <!-- =================================================
+           ENGINEERING
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          05 / ENGINEERING
+        </span>
+
+        <h2>
+          The interesting part
+          is the control problem.
+        </h2>
+
+
+        <p>
+
+          Unlike a conventional multirotor where multiple
+          independently controlled motors provide direct
+          attitude authority, this project investigates
+          how a constrained system can generate and control
+          motion around a specific axis.
+
+        </p>
+
+
+        <p>
+
+          This makes the project particularly useful for
+          studying feedback control, actuator dynamics,
+          system response and experimental flight
+          stabilization.
+
+        </p>
+
+
+        <div class="project-hero-tech">
+
+          <span>
+            CONTROL SYSTEMS
+          </span>
+
+          <span>
+            PID
+          </span>
+
+          <span>
+            IMU
+          </span>
+
+          <span>
+            EMBEDDED CONTROL
+          </span>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           TESTING
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          06 / TESTING
+        </span>
+
+        <h2>
+          Iteration through testing.
+        </h2>
+
+
+        <p>
+
+          Testing is being performed incrementally,
+          beginning with individual actuator and sensor
+          validation before progressing toward integrated
+          flight experiments.
+
+        </p>
+
+
+        <div class="project-gallery">
+
+
+          <img
+            src="isro-single-axis/testing.webp"
+            alt="Single-Axis Drone testing"
+            loading="lazy"
+          >
+
+
+          <img
+            src="isro-single-axis/test-setup.webp"
+            alt="Single-Axis Drone test setup"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <!-- Add actual video when available -->
+
+        <!--
+
+        <video
+          class="project-video"
+          controls
+          preload="metadata"
+        >
+
+          <source
+            src="isro-single-axis/demo.mp4"
+            type="video/mp4"
+          >
+
+          Your browser does not support
+          the video tag.
+
+        </video>
+
+        -->
+
+      </section>
+
+
+
+      <!-- =================================================
+           STATUS
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          07 / STATUS
+        </span>
+
+        <h2>
+          Still in development.
+        </h2>
+
+
+        <p>
+
+          The Single-Axis Drone is currently under
+          development. The platform is being refined
+          through mechanical, electrical and control-system
+          iterations.
+
+        </p>
+
+
+        <p>
+
+          Future work will focus on improving flight
+          stability, control response and overall
+          experimental performance.
+
+        </p>
+
+      </section>
+
+
+
+      <!-- =================================================
+           ACTIONS
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <div class="project-actions">
+
+
+          <a
+            href="projects.html"
+            class="project-action secondary"
+          >
+
+            <i class="fas fa-arrow-left"></i>
+
+            Back to Projects
+
+          </a>
+
+
+        </div>
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

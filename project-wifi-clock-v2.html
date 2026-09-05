@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Wi-Fi Clock V2 | Arka's Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+
+  <style>
+
+    /* =====================================================
+       WI-FI CLOCK V2 COLOR SYSTEM
+    ====================================================== */
+
+    :root {
+
+      --project-accent: #00e5ff;
+
+      --project-accent-bright: #38edff;
+
+      --project-accent-soft:
+        rgba(0, 229, 255, 0.08);
+
+      --project-accent-border:
+        rgba(0, 229, 255, 0.30);
+
+      --project-accent-glow:
+        rgba(0, 229, 255, 0.45);
+
+    }
+
+
+    /* =====================================================
+       PROJECT PAGE
+    ====================================================== */
+
+    .project-detail-page {
+
+      min-height: 100vh;
+
+      padding-top: 100px;
+
+      background:
+
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(0, 229, 255, 0.055),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 85% 75%,
+          rgba(0, 229, 255, 0.035),
+          transparent 30%
+        ),
+
+        #070b0d;
+
+      color: #ffffff;
+
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .project-hero {
+
+      width: min(
+        1200px,
+        calc(100% - 40px)
+      );
+
+      margin: 0 auto;
+
+      padding: 80px 0 70px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1.15fr;
+
+      gap: 70px;
+
+      align-items: center;
+
+    }
+
+
+    .project-hero-info {
+
+      text-align: left;
+
+    }
+
+
+    .project-category {
+
+      display: block;
+
+      margin-bottom: 18px;
+
+      color: var(--project-accent);
+
+      font-size: 0.72rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+    }
+
+
+    .project-hero h1 {
+
+      margin: 0;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(3rem, 6vw, 5.8rem);
+
+      line-height: 0.9;
+
+      letter-spacing: -0.055em;
+
+    }
+
+
+    .project-hero h1 span {
+
+      color: var(--project-accent);
+
+    }
+
+
+    .project-tagline {
+
+      max-width: 560px;
+
+      margin-top: 28px;
+
+      color: #929c9b;
+
+      font-size: 1.05rem;
+
+      line-height: 1.7;
+
+    }
+
+
+    /* =====================================================
+       STATUS
+    ====================================================== */
+
+    .project-detail-status {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      margin-top: 28px;
+
+      padding: 8px 13px;
+
+      border:
+        1px solid
+        var(--project-accent-border);
+
+      border-radius: 20px;
+
+      background:
+        var(--project-accent-soft);
+
+      color: var(--project-accent);
+
+      font-size: 0.65rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.1em;
+
+    }
+
+
+    .project-detail-status .status-dot {
+
+      width: 7px;
+
+      height: 7px;
+
+      border-radius: 50%;
+
+      background:
+        var(--project-accent);
+
+      box-shadow:
+        0 0 9px
+        var(--project-accent-glow);
+
+    }
+
+
+    /* =====================================================
+       HERO IMAGE
+    ====================================================== */
+
+    .project-hero-image {
+
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 16px;
+
+      border:
+        1px solid #203237;
+
+      background: #0c1214;
+
+      box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.35);
+
+    }
+
+
+    .project-hero-image::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      border:
+        1px solid
+        rgba(0, 229, 255, 0.10);
+
+      border-radius: inherit;
+
+    }
+
+
+    .project-hero-image img {
+
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 10;
+
+      object-fit: cover;
+
+    }
+
+
+    /* =====================================================
+       TECH TAGS
+    ====================================================== */
+
+    .project-hero-tech {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 28px;
+
+    }
+
+
+    .project-hero-tech span {
+
+      padding: 7px 11px;
+
+      border:
+        1px solid #26363a;
+
+      border-radius: 5px;
+
+      color: #8b9694;
+
+      background:
+        rgba(0, 229, 255, 0.015);
+
+      font-size: 0.65rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.03em;
+
+      transition:
+        border-color 0.25s ease,
+        color 0.25s ease;
+
+    }
+
+
+    .project-hero-tech span:hover {
+
+      border-color:
+        var(--project-accent-border);
+
+      color:
+        var(--project-accent);
+
+    }
+
+
+    /* =====================================================
+       CONTENT
+    ====================================================== */
+
+    .project-detail-content {
+
+      width: min(
+        1000px,
+        calc(100% - 40px)
+      );
+
+      margin: 0 auto;
+
+      padding-bottom: 120px;
+
+    }
+
+
+    .project-detail-section {
+
+      padding: 70px 0;
+
+      border-top:
+        1px solid #18272a;
+
+    }
+
+
+    .project-detail-section:first-child {
+
+      border-top: none;
+
+    }
+
+
+    .project-detail-label {
+
+      display: block;
+
+      margin-bottom: 15px;
+
+      color: var(--project-accent);
+
+      font-size: 0.68rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+    }
+
+
+    .project-detail-section h2 {
+
+      margin: 0 0 25px;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(2rem, 4vw, 3rem);
+
+      line-height: 1;
+
+      letter-spacing: -0.035em;
+
+    }
+
+
+    .project-detail-section p {
+
+      max-width: 850px;
+
+      margin-bottom: 18px;
+
+      color: #929c9b;
+
+      font-size: 1rem;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       FEATURE GRID
+    ====================================================== */
+
+    .project-info-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 20px;
+
+      margin-top: 35px;
+
+    }
+
+
+    .project-info-box {
+
+      padding: 25px;
+
+      border:
+        1px solid #203237;
+
+      border-radius: 12px;
+
+      background: #0c1214;
+
+      transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+
+    }
+
+
+    .project-info-box:hover {
+
+      border-color:
+        var(--project-accent-border);
+
+      transform:
+        translateY(-3px);
+
+    }
+
+
+    .project-info-box h3 {
+
+      margin-bottom: 15px;
+
+      color: #ffffff;
+
+      font-size: 1rem;
+
+    }
+
+
+    .project-info-box ul {
+
+      margin: 0;
+
+      padding-left: 18px;
+
+      color: #899493;
+
+    }
+
+
+    .project-info-box li {
+
+      margin-bottom: 9px;
+
+      font-size: 0.9rem;
+
+      line-height: 1.6;
+
+    }
+
+
+    .project-info-box li::marker {
+
+      color:
+        var(--project-accent);
+
+    }
+
+
+    /* =====================================================
+       GALLERY
+    ====================================================== */
+
+    .project-gallery {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 18px;
+
+      margin-top: 35px;
+
+    }
+
+
+    .project-gallery img {
+
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 10;
+
+      object-fit: cover;
+
+      border-radius: 12px;
+
+      border:
+        1px solid #203237;
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    }
+
+
+    .project-gallery img:hover {
+
+      transform:
+        translateY(-4px);
+
+      border-color:
+        var(--project-accent-border);
+
+      box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.35);
+
+    }
+
+
+    /* =====================================================
+       SPECIFICATIONS
+    ====================================================== */
+
+    .project-specs {
+
+      width: 100%;
+
+      margin-top: 30px;
+
+      border-collapse:
+        collapse;
+
+    }
+
+
+    .project-specs tr {
+
+      border-bottom:
+        1px solid #18272a;
+
+    }
+
+
+    .project-specs tr:hover {
+
+      background:
+        rgba(0, 229, 255, 0.025);
+
+    }
+
+
+    .project-specs td {
+
+      padding: 15px 10px;
+
+      color: #929c9b;
+
+      font-size: 0.9rem;
+
+      vertical-align: top;
+
+    }
+
+
+    .project-specs td:first-child {
+
+      width: 35%;
+
+      color: #ffffff;
+
+      font-weight: 700;
+
+    }
+
+
+    /* =====================================================
+       CODE / ARCHITECTURE BLOCK
+    ====================================================== */
+
+    .architecture-flow {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 10px;
+
+      margin-top: 35px;
+
+    }
+
+
+    .architecture-node {
+
+      padding: 14px 18px;
+
+      border:
+        1px solid
+        var(--project-accent-border);
+
+      border-radius: 8px;
+
+      background:
+        var(--project-accent-soft);
+
+      color: #ffffff;
+
+      font-size: 0.75rem;
+
+      font-weight: 700;
+
+      text-align: center;
+
+    }
+
+
+    .architecture-arrow {
+
+      color:
+        var(--project-accent);
+
+      font-size: 1.1rem;
+
+    }
+
+
+    /* =====================================================
+       VIDEO
+    ====================================================== */
+
+    .project-video {
+
+      display: block;
+
+      width: 100%;
+
+      margin-top: 35px;
+
+      border-radius: 14px;
+
+      border:
+        1px solid #203237;
+
+      background: #000;
+
+    }
+
+
+    /* =====================================================
+       ACTIONS
+    ====================================================== */
+
+    .project-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 40px;
+
+    }
+
+
+    .project-action {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      padding: 11px 18px;
+
+      border:
+        1px solid
+        var(--project-accent);
+
+      border-radius: 5px;
+
+      color:
+        var(--project-accent);
+
+      background: transparent;
+
+      font-size: 0.75rem;
+
+      font-weight: 800;
+
+      text-decoration: none;
+
+      transition:
+        all 0.25s ease;
+
+    }
+
+
+    .project-action:hover {
+
+      background:
+        var(--project-accent);
+
+      color: #06100b;
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 8px 25px
+        rgba(0, 229, 255, 0.18);
+
+    }
+
+
+    .project-action.secondary {
+
+      border-color: #293a3e;
+
+      color: #929c9b;
+
+    }
+
+
+    .project-action.secondary:hover {
+
+      border-color:
+        var(--project-accent);
+
+      color:
+        var(--project-accent);
+
+      background: transparent;
+
+      box-shadow: none;
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 800px) {
+
+      .project-detail-page {
+
+        padding-top: 80px;
+
+      }
+
+
+      .project-hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding-top: 50px;
+
+      }
+
+
+      .project-hero h1 {
+
+        font-size:
+          clamp(3rem, 14vw, 5rem);
+
+      }
+
+
+      .project-info-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .project-gallery {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .project-hero,
+      .project-detail-content {
+
+        width:
+          min(100% - 28px, 1200px);
+
+      }
+
+
+      .project-detail-section {
+
+        padding: 50px 0;
+
+      }
+
+
+      .architecture-flow {
+
+        flex-direction: column;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <nav class="navbar">
+
+      <a href="index.html" class="brand">
+
+        <span class="brand-logo">
+          A
+        </span>
+
+        <span>
+          Arka's <strong>Portfolio</strong>
+        </span>
+
+      </a>
+
+
+      <div class="nav-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a
+          href="projects.html"
+          class="active"
+        >
+          Projects
+        </a>
+
+        <a href="experience.html">
+          Experience
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation menu"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       WI-FI CLOCK V2
+  ====================================================== -->
+
+  <main class="project-detail-page">
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section class="project-hero">
+
+
+      <div class="project-hero-info">
+
+
+        <span class="project-category">
+          18 / EMBEDDED & IoT
+        </span>
+
+
+        <h1>
+          WI-FI
+          <span>CLOCK V2</span>
+        </h1>
+
+
+        <p class="project-tagline">
+
+          An ESP8266-powered smart LED matrix clock
+          combining real-time internet time, alarms,
+          stopwatch, countdown timer and a browser-based
+          control dashboard.
+
+        </p>
+
+
+        <div class="project-detail-status">
+
+          <span class="status-dot"></span>
+
+          COMPLETED
+
+        </div>
+
+
+        <div class="project-hero-tech">
+
+          <span>
+            ESP8266
+          </span>
+
+          <span>
+            MAX7219
+          </span>
+
+          <span>
+            NTP
+          </span>
+
+          <span>
+            WEB DASHBOARD
+          </span>
+
+          <span>
+            IoT
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="project-hero-image">
+
+        <img
+          src="wifi_clock_v2/wifi-clock-v2.webp"
+          alt="Wi-Fi Clock V2"
+        >
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         CONTENT
+    ==================================================== -->
+
+    <div class="project-detail-content">
+
+
+      <!-- =================================================
+           OVERVIEW
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          01 / OVERVIEW
+        </span>
+
+
+        <h2>
+          More than a clock.
+          It's a tiny IoT dashboard.
+        </h2>
+
+
+        <p>
+
+          Wi-Fi Clock V2 is an upgraded version of my
+          earlier ESP8266-based clock project.
+
+        </p>
+
+
+        <p>
+
+          The project combines an ESP8266, MAX7219 LED
+          matrix and buzzer to create a multi-function
+          smart clock controlled entirely through a
+          web browser.
+
+        </p>
+
+
+        <p>
+
+          The system does not require a dedicated mobile
+          application. Once connected to Wi-Fi, the
+          ESP8266 hosts its own web dashboard.
+
+        </p>
+
+      </section>
+
+
+
+      <!-- =================================================
+           FEATURES
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          02 / FEATURES
+        </span>
+
+
+        <h2>
+          One display.
+          Multiple modes.
+        </h2>
+
+
+        <div class="project-info-grid">
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Time & Alarm
+            </h3>
+
+            <ul>
+
+              <li>
+                Real-time internet clock using NTP.
+              </li>
+
+              <li>
+                Indian Standard Time support.
+              </li>
+
+              <li>
+                User-configurable alarm.
+              </li>
+
+              <li>
+                Automatic buzzer notification.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Productivity Modes
+            </h3>
+
+            <ul>
+
+              <li>
+                Stopwatch with start/stop/reset.
+              </li>
+
+              <li>
+                Countdown timer.
+              </li>
+
+              <li>
+                Custom scrolling messages.
+              </li>
+
+              <li>
+                Multiple display modes.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Web Dashboard
+            </h3>
+
+            <ul>
+
+              <li>
+                Browser-based control.
+              </li>
+
+              <li>
+                Mobile-friendly interface.
+              </li>
+
+              <li>
+                Dark/light interface toggle.
+              </li>
+
+              <li>
+                Touch-friendly controls.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Smart Startup
+            </h3>
+
+            <ul>
+
+              <li>
+                Displays Wi-Fi connection status.
+              </li>
+
+              <li>
+                Shows the device IP address on boot.
+              </li>
+
+              <li>
+                IP displayed segment by segment.
+              </li>
+
+              <li>
+                Easy browser connection.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           SYSTEM ARCHITECTURE
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          03 / ARCHITECTURE
+        </span>
+
+
+        <h2>
+          From Wi-Fi packet
+          to LED pixels.
+        </h2>
+
+
+        <p>
+
+          The ESP8266 acts as the central controller,
+          connecting the physical display and buzzer with
+          the browser-based user interface.
+
+        </p>
+
+
+        <div class="architecture-flow">
+
+
+          <div class="architecture-node">
+            Wi-Fi
+          </div>
+
+
+          <div class="architecture-arrow">
+            →
+          </div>
+
+
+          <div class="architecture-node">
+            ESP8266
+          </div>
+
+
+          <div class="architecture-arrow">
+            →
+          </div>
+
+
+          <div class="architecture-node">
+            MAX7219
+          </div>
+
+
+          <div class="architecture-arrow">
+            →
+          </div>
+
+
+          <div class="architecture-node">
+            LED Matrix
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           HARDWARE
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          04 / HARDWARE
+        </span>
+
+
+        <h2>
+          Hardware architecture.
+        </h2>
+
+
+        <table class="project-specs">
+
+
+          <tr>
+
+            <td>
+              Microcontroller
+            </td>
+
+            <td>
+              NodeMCU ESP8266
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Display
+            </td>
+
+            <td>
+              MAX7219-based 4-module LED dot matrix
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Display Driver
+            </td>
+
+            <td>
+              MD_Parola + MD_MAX72xx
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Buzzer
+            </td>
+
+            <td>
+              Buzzer connected to GPIO2 / D4
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Communication
+            </td>
+
+            <td>
+              Wi-Fi
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Time Source
+            </td>
+
+            <td>
+              Internet NTP server
+            </td>
+
+          </tr>
+
+        </table>
+
+      </section>
+
+
+
+      <!-- =================================================
+           SOFTWARE
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          05 / SOFTWARE
+        </span>
+
+
+        <h2>
+          The ESP8266 runs
+          the whole system.
+        </h2>
+
+
+        <p>
+
+          The firmware combines display control, Wi-Fi
+          networking, NTP synchronization and a web server
+          into a single embedded application.
+
+        </p>
+
+
+        <div class="project-info-grid">
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Display Stack
+            </h3>
+
+            <ul>
+
+              <li>
+                MD_Parola
+              </li>
+
+              <li>
+                MD_MAX72xx
+              </li>
+
+              <li>
+                SPI communication
+              </li>
+
+              <li>
+                Four MAX7219 display modules
+              </li>
+
+            </ul>
+
+          </div>
+
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Network Stack
+            </h3>
+
+            <ul>
+
+              <li>
+                ESP8266WiFi
+              </li>
+
+              <li>
+                ESP8266WebServer
+              </li>
+
+              <li>
+                WiFiUDP
+              </li>
+
+              <li>
+                NTPClient
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           WEB DASHBOARD
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          06 / WEB DASHBOARD
+        </span>
+
+
+        <h2>
+          A browser becomes
+          the remote control.
+        </h2>
+
+
+        <p>
+
+          The ESP8266 hosts a complete HTML dashboard
+          directly from the device.
+
+        </p>
+
+
+        <p>
+
+          Through the dashboard, the user can configure
+          messages, alarms and timers, switch display modes
+          and operate the stopwatch.
+
+        </p>
+
+
+        <div class="project-gallery">
+
+
+          <img
+            src="wifi_clock_v2/dashboard.webp"
+            alt="Wi-Fi Clock V2 web dashboard"
+            loading="lazy"
+          >
+
+
+          <img
+            src="wifi_clock_v2/display.webp"
+            alt="Wi-Fi Clock V2 LED display"
+            loading="lazy"
+          >
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           TIME SYSTEM
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          07 / TIME SYSTEM
+        </span>
+
+
+        <h2>
+          Accurate time without
+          an RTC module.
+        </h2>
+
+
+        <p>
+
+          Instead of relying on a dedicated real-time clock
+          module, the system retrieves time from an NTP
+          server over the internet.
+
+        </p>
+
+
+        <p>
+
+          The firmware uses an offset of 19,800 seconds
+          to represent Indian Standard Time (UTC+5:30),
+          with the NTP client refreshing periodically.
+
+        </p>
+
+
+        <div class="project-hero-tech">
+
+          <span>
+            NTP
+          </span>
+
+          <span>
+            UTC +5:30
+          </span>
+
+          <span>
+            IST
+          </span>
+
+          <span>
+            Wi-Fi
+          </span>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           TESTING
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          08 / TESTING
+        </span>
+
+
+        <h2>
+          From prototype
+          to daily-use device.
+        </h2>
+
+
+        <p>
+
+          Testing focused on Wi-Fi connectivity, display
+          operation, NTP synchronization, web-dashboard
+          control, alarm behaviour, stopwatch operation and
+          countdown timing.
+
+        </p>
+
+
+        <div class="project-gallery">
+
+
+          <img
+            src="wifi_clock_v2/testing.webp"
+            alt="Wi-Fi Clock V2 testing"
+            loading="lazy"
+          >
+
+
+          <img
+            src="wifi_clock_v2/build.webp"
+            alt="Wi-Fi Clock V2 build"
+            loading="lazy"
+          >
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           RESULT
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <span class="project-detail-label">
+          09 / RESULT
+        </span>
+
+
+        <h2>
+          A smarter second generation.
+        </h2>
+
+
+        <p>
+
+          Wi-Fi Clock V2 evolved the original simple
+          ESP8266 clock into a considerably more capable
+          embedded IoT device.
+
+        </p>
+
+
+        <p>
+
+          It combines physical hardware, internet
+          connectivity and a responsive browser interface
+          into a single self-contained system.
+
+        </p>
+
+      </section>
+
+
+
+      <!-- =================================================
+           PROJECT LINK
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+
+        <div class="project-actions">
+
+
+          <a
+            href="https://www.hackster.io/arkamanna20/wi-fi-clock-v2-2a22b9"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-action"
+          >
+
+            <i class="fas fa-external-link-alt"></i>
+
+            View on Hackster
+
+          </a>
+
+
+          <a
+            href="projects.html"
+            class="project-action secondary"
+          >
+
+            <i class="fas fa-arrow-left"></i>
+
+            Back to Projects
+
+          </a>
+
+
+        </div>
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

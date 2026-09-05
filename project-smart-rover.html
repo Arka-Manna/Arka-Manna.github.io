@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Smart Rover | Arka's Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+
+  <style>
+
+    /* =====================================================
+       SMART ROVER COLOR SYSTEM
+    ====================================================== */
+
+    :root {
+
+      --project-accent: #7dff4f;
+
+      --project-accent-bright: #a1ff7e;
+
+      --project-accent-soft:
+        rgba(125, 255, 79, 0.08);
+
+      --project-accent-border:
+        rgba(125, 255, 79, 0.30);
+
+      --project-accent-glow:
+        rgba(125, 255, 79, 0.45);
+
+    }
+
+
+    /* =====================================================
+       PROJECT PAGE
+    ====================================================== */
+
+    .project-detail-page {
+
+      min-height: 100vh;
+
+      padding-top: 100px;
+
+      background:
+
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(125, 255, 79, 0.055),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 85% 75%,
+          rgba(125, 255, 79, 0.035),
+          transparent 30%
+        ),
+
+        #070b0d;
+
+      color: #ffffff;
+
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .project-hero {
+
+      width: min(
+        1200px,
+        calc(100% - 40px)
+      );
+
+      margin: 0 auto;
+
+      padding: 80px 0 70px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1.15fr;
+
+      gap: 70px;
+
+      align-items: center;
+
+    }
+
+
+    .project-hero-info {
+
+      text-align: left;
+
+    }
+
+
+    .project-category {
+
+      display: block;
+
+      margin-bottom: 18px;
+
+      color: var(--project-accent);
+
+      font-size: 0.72rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+    }
+
+
+    .project-hero h1 {
+
+      margin: 0;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(3.2rem, 6vw, 6rem);
+
+      line-height: 0.9;
+
+      letter-spacing: -0.055em;
+
+    }
+
+
+    .project-hero h1 span {
+
+      color: var(--project-accent);
+
+    }
+
+
+    .project-tagline {
+
+      max-width: 560px;
+
+      margin-top: 28px;
+
+      color: #929c9b;
+
+      font-size: 1.05rem;
+
+      line-height: 1.7;
+
+    }
+
+
+    /* =====================================================
+       STATUS
+    ====================================================== */
+
+    .project-detail-status {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      margin-top: 28px;
+
+      padding: 8px 13px;
+
+      border:
+        1px solid
+        var(--project-accent-border);
+
+      border-radius: 20px;
+
+      background:
+        var(--project-accent-soft);
+
+      color: var(--project-accent);
+
+      font-size: 0.65rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.1em;
+
+    }
+
+
+    .project-detail-status .status-dot {
+
+      width: 7px;
+
+      height: 7px;
+
+      border-radius: 50%;
+
+      background:
+        var(--project-accent);
+
+      box-shadow:
+        0 0 9px
+        var(--project-accent-glow);
+
+    }
+
+
+    /* =====================================================
+       HERO IMAGE
+    ====================================================== */
+
+    .project-hero-image {
+
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 16px;
+
+      border:
+        1px solid #273526;
+
+      background: #0c1214;
+
+      box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.35);
+
+    }
+
+
+    .project-hero-image::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      border:
+        1px solid
+        rgba(125, 255, 79, 0.10);
+
+      border-radius: inherit;
+
+    }
+
+
+    .project-hero-image img {
+
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 10;
+
+      object-fit: cover;
+
+    }
+
+
+    /* =====================================================
+       TECH TAGS
+    ====================================================== */
+
+    .project-hero-tech {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 28px;
+
+    }
+
+
+    .project-hero-tech span {
+
+      padding: 7px 11px;
+
+      border:
+        1px solid #2b3829;
+
+      border-radius: 5px;
+
+      color: #929b91;
+
+      background:
+        rgba(125, 255, 79, 0.015);
+
+      font-size: 0.65rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.03em;
+
+      transition:
+        border-color 0.25s ease,
+        color 0.25s ease;
+
+    }
+
+
+    .project-hero-tech span:hover {
+
+      border-color:
+        var(--project-accent-border);
+
+      color:
+        var(--project-accent);
+
+    }
+
+
+    /* =====================================================
+       CONTENT
+    ====================================================== */
+
+    .project-detail-content {
+
+      width: min(
+        1000px,
+        calc(100% - 40px)
+      );
+
+      margin: 0 auto;
+
+      padding-bottom: 120px;
+
+    }
+
+
+    .project-detail-section {
+
+      padding: 70px 0;
+
+      border-top:
+        1px solid #1d281c;
+
+    }
+
+
+    .project-detail-section:first-child {
+
+      border-top: none;
+
+    }
+
+
+    .project-detail-label {
+
+      display: block;
+
+      margin-bottom: 15px;
+
+      color: var(--project-accent);
+
+      font-size: 0.68rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+    }
+
+
+    .project-detail-section h2 {
+
+      margin: 0 0 25px;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(2rem, 4vw, 3rem);
+
+      line-height: 1;
+
+      letter-spacing: -0.035em;
+
+    }
+
+
+    .project-detail-section p {
+
+      max-width: 850px;
+
+      margin-bottom: 18px;
+
+      color: #929c9b;
+
+      font-size: 1rem;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       INFORMATION GRID
+    ====================================================== */
+
+    .project-info-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 20px;
+
+      margin-top: 35px;
+
+    }
+
+
+    .project-info-box {
+
+      padding: 25px;
+
+      border:
+        1px solid #273526;
+
+      border-radius: 12px;
+
+      background: #0c1214;
+
+      transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+
+    }
+
+
+    .project-info-box:hover {
+
+      border-color:
+        var(--project-accent-border);
+
+      transform:
+        translateY(-3px);
+
+    }
+
+
+    .project-info-box h3 {
+
+      margin-bottom: 15px;
+
+      color: #ffffff;
+
+      font-size: 1rem;
+
+    }
+
+
+    .project-info-box ul {
+
+      margin: 0;
+
+      padding-left: 18px;
+
+      color: #899493;
+
+    }
+
+
+    .project-info-box li {
+
+      margin-bottom: 9px;
+
+      font-size: 0.9rem;
+
+      line-height: 1.6;
+
+    }
+
+
+    .project-info-box li::marker {
+
+      color:
+        var(--project-accent);
+
+    }
+
+
+    /* =====================================================
+       ARCHITECTURE
+    ====================================================== */
+
+    .architecture-flow {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 10px;
+
+      margin-top: 40px;
+
+    }
+
+
+    .architecture-node {
+
+      min-width: 125px;
+
+      padding: 15px 17px;
+
+      border:
+        1px solid
+        var(--project-accent-border);
+
+      border-radius: 9px;
+
+      background:
+        var(--project-accent-soft);
+
+      color: #ffffff;
+
+      font-size: 0.75rem;
+
+      font-weight: 800;
+
+      text-align: center;
+
+    }
+
+
+    .architecture-node small {
+
+      display: block;
+
+      margin-top: 5px;
+
+      color: #858f8d;
+
+      font-size: 0.62rem;
+
+      font-weight: 500;
+
+    }
+
+
+    .architecture-arrow {
+
+      color:
+        var(--project-accent);
+
+      font-size: 1.1rem;
+
+    }
+
+
+    /* =====================================================
+       GALLERY
+    ====================================================== */
+
+    .project-gallery {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 18px;
+
+      margin-top: 35px;
+
+    }
+
+
+    .project-gallery img {
+
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 10;
+
+      object-fit: cover;
+
+      border-radius: 12px;
+
+      border:
+        1px solid #273526;
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    }
+
+
+    .project-gallery img:hover {
+
+      transform:
+        translateY(-4px);
+
+      border-color:
+        var(--project-accent-border);
+
+      box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.35);
+
+    }
+
+
+    /* =====================================================
+       SPECIFICATIONS
+    ====================================================== */
+
+    .project-specs {
+
+      width: 100%;
+
+      margin-top: 30px;
+
+      border-collapse:
+        collapse;
+
+    }
+
+
+    .project-specs tr {
+
+      border-bottom:
+        1px solid #1d281c;
+
+    }
+
+
+    .project-specs tr:hover {
+
+      background:
+        rgba(125, 255, 79, 0.025);
+
+    }
+
+
+    .project-specs td {
+
+      padding: 15px 10px;
+
+      color: #929c9b;
+
+      font-size: 0.9rem;
+
+      vertical-align: top;
+
+    }
+
+
+    .project-specs td:first-child {
+
+      width: 35%;
+
+      color: #ffffff;
+
+      font-weight: 700;
+
+    }
+
+
+    /* =====================================================
+       DEVELOPMENT NOTE
+    ====================================================== */
+
+    .development-note {
+
+      margin-top: 30px;
+
+      padding: 22px 24px;
+
+      border-left:
+        3px solid
+        var(--project-accent);
+
+      background:
+        var(--project-accent-soft);
+
+      border-radius:
+        0 10px 10px 0;
+
+    }
+
+
+    .development-note strong {
+
+      display: block;
+
+      margin-bottom: 8px;
+
+      color:
+        var(--project-accent);
+
+      font-size: 0.8rem;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .development-note p {
+
+      margin: 0;
+
+      color: #929c9b;
+
+      font-size: 0.92rem;
+
+    }
+
+
+    /* =====================================================
+       ACTIONS
+    ====================================================== */
+
+    .project-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 40px;
+
+    }
+
+
+    .project-action {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      padding: 11px 18px;
+
+      border:
+        1px solid
+        var(--project-accent);
+
+      border-radius: 5px;
+
+      color:
+        var(--project-accent);
+
+      background: transparent;
+
+      font-size: 0.75rem;
+
+      font-weight: 800;
+
+      text-decoration: none;
+
+      transition:
+        all 0.25s ease;
+
+    }
+
+
+    .project-action:hover {
+
+      background:
+        var(--project-accent);
+
+      color: #061006;
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 8px 25px
+        rgba(125, 255, 79, 0.18);
+
+    }
+
+
+    .project-action.secondary {
+
+      border-color: #303b2f;
+
+      color: #929c9b;
+
+    }
+
+
+    .project-action.secondary:hover {
+
+      border-color:
+        var(--project-accent);
+
+      color:
+        var(--project-accent);
+
+      background: transparent;
+
+      box-shadow: none;
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 800px) {
+
+      .project-detail-page {
+
+        padding-top: 80px;
+
+      }
+
+
+      .project-hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding-top: 50px;
+
+      }
+
+
+      .project-hero h1 {
+
+        font-size:
+          clamp(3rem, 14vw, 5rem);
+
+      }
+
+
+      .project-info-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .project-gallery {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .project-hero,
+      .project-detail-content {
+
+        width:
+          min(100% - 28px, 1200px);
+
+      }
+
+
+      .project-detail-section {
+
+        padding: 50px 0;
+
+      }
+
+
+      .architecture-flow {
+
+        flex-direction: column;
+
+      }
+
+
+      .architecture-arrow {
+
+        transform:
+          rotate(90deg);
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <nav class="navbar">
+
+      <a href="index.html" class="brand">
+
+        <span class="brand-logo">
+          A
+        </span>
+
+        <span>
+          Arka's <strong>Portfolio</strong>
+        </span>
+
+      </a>
+
+
+      <div class="nav-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a
+          href="projects.html"
+          class="active"
+        >
+          Projects
+        </a>
+
+        <a href="experience.html">
+          Experience
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation menu"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       SMART ROVER
+  ====================================================== -->
+
+  <main class="project-detail-page">
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section class="project-hero">
+
+
+      <div class="project-hero-info">
+
+
+        <span class="project-category">
+          20 / ROBOTICS
+        </span>
+
+
+        <h1>
+          SMART
+          <span>ROVER</span>
+        </h1>
+
+
+        <p class="project-tagline">
+
+          A developing mobile robotics platform focused
+          on intelligent ground navigation, embedded
+          control, sensing and future autonomous operation.
+
+        </p>
+
+
+        <div class="project-detail-status">
+
+          <span class="status-dot"></span>
+
+          IN DEVELOPMENT
+
+        </div>
+
+
+        <div class="project-hero-tech">
+
+          <span>
+            ROBOTICS
+          </span>
+
+          <span>
+            MOBILE PLATFORM
+          </span>
+
+          <span>
+            EMBEDDED
+          </span>
+
+          <span>
+            SENSORS
+          </span>
+
+          <span>
+            CONTROL SYSTEMS
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="project-hero-image">
+
+        <img
+          src="smart_rover/smart-rover.webp"
+          alt="Smart Rover"
+        >
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         CONTENT
+    ==================================================== -->
+
+    <div class="project-detail-content">
+
+
+      <!-- =================================================
+           OVERVIEW
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          01 / OVERVIEW
+        </span>
+
+
+        <h2>
+          A mobile platform
+          built to evolve.
+        </h2>
+
+
+        <p>
+
+          The Smart Rover is an ongoing mobile robotics
+          project designed as a flexible platform for
+          experimenting with robotic movement, sensing,
+          control and autonomous behaviour.
+
+        </p>
+
+
+        <p>
+
+          Rather than building the robot around a single
+          fixed task, the platform is being developed with
+          future upgrades and different robotic behaviours
+          in mind.
+
+        </p>
+
+
+        <p>
+
+          The project brings together mechanical design,
+          embedded electronics and robotics software into
+          one ground-based system.
+
+        </p>
+
+      </section>
+
+
+
+      <!-- =================================================
+           OBJECTIVES
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          02 / OBJECTIVES
+        </span>
+
+
+        <h2>
+          Built around
+          experimentation.
+        </h2>
+
+
+        <div class="project-info-grid">
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Mobility
+            </h3>
+
+            <ul>
+
+              <li>
+                Develop a stable mobile robot platform.
+              </li>
+
+              <li>
+                Implement reliable motor control.
+              </li>
+
+              <li>
+                Study ground movement and manoeuvring.
+              </li>
+
+              <li>
+                Create a platform suitable for expansion.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Intelligence
+            </h3>
+
+            <ul>
+
+              <li>
+                Integrate sensors for environmental awareness.
+              </li>
+
+              <li>
+                Experiment with navigation logic.
+              </li>
+
+              <li>
+                Develop responsive control behaviour.
+              </li>
+
+              <li>
+                Prepare the platform for autonomous functions.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           SYSTEM ARCHITECTURE
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          03 / SYSTEM
+        </span>
+
+
+        <h2>
+          From sensing
+          to movement.
+        </h2>
+
+
+        <p>
+
+          The rover is structured around a central embedded
+          control system that connects sensing, decision
+          making and motor actuation.
+
+        </p>
+
+
+        <div class="architecture-flow">
+
+
+          <div class="architecture-node">
+
+            SENSORS
+
+            <small>
+              Environment
+            </small>
+
+          </div>
+
+
+          <div class="architecture-arrow">
+            →
+          </div>
+
+
+          <div class="architecture-node">
+
+            CONTROLLER
+
+            <small>
+              Processing
+            </small>
+
+          </div>
+
+
+          <div class="architecture-arrow">
+            →
+          </div>
+
+
+          <div class="architecture-node">
+
+            CONTROL
+
+            <small>
+              Decision logic
+            </small>
+
+          </div>
+
+
+          <div class="architecture-arrow">
+            →
+          </div>
+
+
+          <div class="architecture-node">
+
+            MOTOR DRIVER
+
+            <small>
+              Power stage
+            </small>
+
+          </div>
+
+
+          <div class="architecture-arrow">
+            →
+          </div>
+
+
+          <div class="architecture-node">
+
+            MOTORS
+
+            <small>
+              Mobility
+            </small>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           ROBOTICS
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          04 / ROBOTICS
+        </span>
+
+
+        <h2>
+          More than
+          just wheels.
+        </h2>
+
+
+        <div class="project-info-grid">
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Motion Control
+            </h3>
+
+            <ul>
+
+              <li>
+                Forward and reverse movement.
+              </li>
+
+              <li>
+                Directional control.
+              </li>
+
+              <li>
+                Motor-speed management.
+              </li>
+
+              <li>
+                Platform-level control logic.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Sensing & Navigation
+            </h3>
+
+            <ul>
+
+              <li>
+                Environmental sensing.
+              </li>
+
+              <li>
+                Feedback-driven behaviour.
+              </li>
+
+              <li>
+                Navigation experiments.
+              </li>
+
+              <li>
+                Scope for autonomous operation.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           HARDWARE
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          05 / HARDWARE
+        </span>
+
+
+        <h2>
+          The physical platform.
+        </h2>
+
+
+        <table class="project-specs">
+
+
+          <tr>
+
+            <td>
+              Platform
+            </td>
+
+            <td>
+              Mobile ground robot
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Control
+            </td>
+
+            <td>
+              Embedded robotic control system
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Mobility
+            </td>
+
+            <td>
+              Electrically driven wheel-based platform
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Sensing
+            </td>
+
+            <td>
+              Sensor integration for environmental feedback
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Development Stage
+            </td>
+
+            <td>
+              Prototype / active development
+            </td>
+
+          </tr>
+
+        </table>
+
+      </section>
+
+
+
+      <!-- =================================================
+           DEVELOPMENT
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          06 / DEVELOPMENT
+        </span>
+
+
+        <h2>
+          Iterating toward
+          autonomous behaviour.
+        </h2>
+
+
+        <p>
+
+          Development is being carried out incrementally,
+          starting with the mechanical platform and basic
+          movement before progressively integrating more
+          sensing and intelligent behaviour.
+
+        </p>
+
+
+        <p>
+
+          This approach makes it possible to validate each
+          subsystem independently before combining them
+          into a complete robotic system.
+
+        </p>
+
+
+        <div class="project-gallery">
+
+
+          <img
+            src="smart_rover/build.webp"
+            alt="Smart Rover development"
+            loading="lazy"
+          >
+
+
+          <img
+            src="smart_rover/testing.webp"
+            alt="Smart Rover testing"
+            loading="lazy"
+          >
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           CONTROL
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          07 / CONTROL
+        </span>
+
+
+        <h2>
+          Feedback-driven robotics.
+        </h2>
+
+
+        <p>
+
+          The long-term direction of the rover is to move
+          beyond simple remote-controlled motion and toward
+          behaviour based on sensor feedback.
+
+        </p>
+
+
+        <p>
+
+          This creates opportunities for navigation,
+          obstacle detection, autonomous movement and
+          higher-level robotic decision making.
+
+        </p>
+
+
+        <div class="project-hero-tech">
+
+          <span>
+            MOTOR CONTROL
+          </span>
+
+          <span>
+            SENSOR FEEDBACK
+          </span>
+
+          <span>
+            NAVIGATION
+          </span>
+
+          <span>
+            AUTONOMOUS SYSTEMS
+          </span>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           CURRENT STATUS
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          08 / STATUS
+        </span>
+
+
+        <h2>
+          Still being built.
+        </h2>
+
+
+        <p>
+
+          The Smart Rover is currently under development.
+          Mechanical, electrical and software subsystems
+          are being refined as the platform evolves.
+
+        </p>
+
+
+        <div class="development-note">
+
+          <strong>
+            CURRENT DEVELOPMENT
+          </strong>
+
+
+          <p>
+
+            Building and refining the rover platform,
+            integrating sensing and developing more
+            advanced robotic behaviour.
+
+          </p>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           FUTURE
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          09 / FUTURE
+        </span>
+
+
+        <h2>
+          The platform is
+          just the beginning.
+        </h2>
+
+
+        <p>
+
+          The Smart Rover is intended to become a reusable
+          robotics platform for testing different sensors,
+          control algorithms, navigation systems and
+          autonomous behaviours.
+
+        </p>
+
+
+        <p>
+
+          Its modular nature allows new capabilities to be
+          added without redesigning the entire robot.
+
+        </p>
+
+      </section>
+
+
+
+      <!-- =================================================
+           ACTIONS
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <div class="project-actions">
+
+
+          <a
+            href="projects.html"
+            class="project-action secondary"
+          >
+
+            <i class="fas fa-arrow-left"></i>
+
+            Back to Projects
+
+          </a>
+
+
+        </div>
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

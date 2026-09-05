@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>LoRa Communication Link | Arka's Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+
+  <style>
+
+    /* =====================================================
+       LORA COLOR SYSTEM
+    ====================================================== */
+
+    :root {
+
+      --project-accent: #b56cff;
+
+      --project-accent-bright: #c98cff;
+
+      --project-accent-soft:
+        rgba(181, 108, 255, 0.08);
+
+      --project-accent-border:
+        rgba(181, 108, 255, 0.30);
+
+      --project-accent-glow:
+        rgba(181, 108, 255, 0.45);
+
+    }
+
+
+    /* =====================================================
+       PROJECT PAGE
+    ====================================================== */
+
+    .project-detail-page {
+
+      min-height: 100vh;
+
+      padding-top: 100px;
+
+      background:
+
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(181, 108, 255, 0.055),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 85% 75%,
+          rgba(181, 108, 255, 0.035),
+          transparent 30%
+        ),
+
+        #070b0d;
+
+      color: #ffffff;
+
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .project-hero {
+
+      width: min(
+        1200px,
+        calc(100% - 40px)
+      );
+
+      margin: 0 auto;
+
+      padding: 80px 0 70px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1.15fr;
+
+      gap: 70px;
+
+      align-items: center;
+
+    }
+
+
+    .project-hero-info {
+
+      text-align: left;
+
+    }
+
+
+    .project-category {
+
+      display: block;
+
+      margin-bottom: 18px;
+
+      color: var(--project-accent);
+
+      font-size: 0.72rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+    }
+
+
+    .project-hero h1 {
+
+      margin: 0;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(3.2rem, 6vw, 6rem);
+
+      line-height: 0.9;
+
+      letter-spacing: -0.055em;
+
+    }
+
+
+    .project-hero h1 span {
+
+      color: var(--project-accent);
+
+    }
+
+
+    .project-tagline {
+
+      max-width: 560px;
+
+      margin-top: 28px;
+
+      color: #929c9b;
+
+      font-size: 1.05rem;
+
+      line-height: 1.7;
+
+    }
+
+
+    /* =====================================================
+       STATUS
+    ====================================================== */
+
+    .project-detail-status {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      margin-top: 28px;
+
+      padding: 8px 13px;
+
+      border:
+        1px solid
+        var(--project-accent-border);
+
+      border-radius: 20px;
+
+      background:
+        var(--project-accent-soft);
+
+      color: var(--project-accent);
+
+      font-size: 0.65rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.1em;
+
+    }
+
+
+    .project-detail-status .status-dot {
+
+      width: 7px;
+
+      height: 7px;
+
+      border-radius: 50%;
+
+      background:
+        var(--project-accent);
+
+      box-shadow:
+        0 0 9px
+        var(--project-accent-glow);
+
+    }
+
+
+    /* =====================================================
+       HERO IMAGE
+    ====================================================== */
+
+    .project-hero-image {
+
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 16px;
+
+      border:
+        1px solid #2c2633;
+
+      background: #0c1214;
+
+      box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.35);
+
+    }
+
+
+    .project-hero-image::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      border:
+        1px solid
+        rgba(181, 108, 255, 0.10);
+
+      border-radius: inherit;
+
+    }
+
+
+    .project-hero-image img {
+
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 10;
+
+      object-fit: cover;
+
+    }
+
+
+    /* =====================================================
+       TECH TAGS
+    ====================================================== */
+
+    .project-hero-tech {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 28px;
+
+    }
+
+
+    .project-hero-tech span {
+
+      padding: 7px 11px;
+
+      border:
+        1px solid #302936;
+
+      border-radius: 5px;
+
+      color: #96909c;
+
+      background:
+        rgba(181, 108, 255, 0.015);
+
+      font-size: 0.65rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.03em;
+
+      transition:
+        border-color 0.25s ease,
+        color 0.25s ease;
+
+    }
+
+
+    .project-hero-tech span:hover {
+
+      border-color:
+        var(--project-accent-border);
+
+      color:
+        var(--project-accent);
+
+    }
+
+
+    /* =====================================================
+       CONTENT
+    ====================================================== */
+
+    .project-detail-content {
+
+      width: min(
+        1000px,
+        calc(100% - 40px)
+      );
+
+      margin: 0 auto;
+
+      padding-bottom: 120px;
+
+    }
+
+
+    .project-detail-section {
+
+      padding: 70px 0;
+
+      border-top:
+        1px solid #211c25;
+
+    }
+
+
+    .project-detail-section:first-child {
+
+      border-top: none;
+
+    }
+
+
+    .project-detail-label {
+
+      display: block;
+
+      margin-bottom: 15px;
+
+      color: var(--project-accent);
+
+      font-size: 0.68rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+    }
+
+
+    .project-detail-section h2 {
+
+      margin: 0 0 25px;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(2rem, 4vw, 3rem);
+
+      line-height: 1;
+
+      letter-spacing: -0.035em;
+
+    }
+
+
+    .project-detail-section p {
+
+      max-width: 850px;
+
+      margin-bottom: 18px;
+
+      color: #929c9b;
+
+      font-size: 1rem;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       INFORMATION GRID
+    ====================================================== */
+
+    .project-info-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 20px;
+
+      margin-top: 35px;
+
+    }
+
+
+    .project-info-box {
+
+      padding: 25px;
+
+      border:
+        1px solid #2c2633;
+
+      border-radius: 12px;
+
+      background: #0c1214;
+
+      transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+
+    }
+
+
+    .project-info-box:hover {
+
+      border-color:
+        var(--project-accent-border);
+
+      transform:
+        translateY(-3px);
+
+    }
+
+
+    .project-info-box h3 {
+
+      margin-bottom: 15px;
+
+      color: #ffffff;
+
+      font-size: 1rem;
+
+    }
+
+
+    .project-info-box ul {
+
+      margin: 0;
+
+      padding-left: 18px;
+
+      color: #899493;
+
+    }
+
+
+    .project-info-box li {
+
+      margin-bottom: 9px;
+
+      font-size: 0.9rem;
+
+      line-height: 1.6;
+
+    }
+
+
+    .project-info-box li::marker {
+
+      color:
+        var(--project-accent);
+
+    }
+
+
+    /* =====================================================
+       GALLERY
+    ====================================================== */
+
+    .project-gallery {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 18px;
+
+      margin-top: 35px;
+
+    }
+
+
+    .project-gallery img {
+
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 10;
+
+      object-fit: cover;
+
+      border-radius: 12px;
+
+      border:
+        1px solid #2c2633;
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    }
+
+
+    .project-gallery img:hover {
+
+      transform:
+        translateY(-4px);
+
+      border-color:
+        var(--project-accent-border);
+
+      box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.35);
+
+    }
+
+
+    /* =====================================================
+       SPECIFICATIONS
+    ====================================================== */
+
+    .project-specs {
+
+      width: 100%;
+
+      margin-top: 30px;
+
+      border-collapse:
+        collapse;
+
+    }
+
+
+    .project-specs tr {
+
+      border-bottom:
+        1px solid #211c25;
+
+    }
+
+
+    .project-specs tr:hover {
+
+      background:
+        rgba(181, 108, 255, 0.025);
+
+    }
+
+
+    .project-specs td {
+
+      padding: 15px 10px;
+
+      color: #929c9b;
+
+      font-size: 0.9rem;
+
+      vertical-align: top;
+
+    }
+
+
+    .project-specs td:first-child {
+
+      width: 35%;
+
+      color: #ffffff;
+
+      font-weight: 700;
+
+    }
+
+
+    /* =====================================================
+       DEVELOPMENT NOTE
+    ====================================================== */
+
+    .development-note {
+
+      margin-top: 30px;
+
+      padding: 22px 24px;
+
+      border-left:
+        3px solid
+        var(--project-accent);
+
+      background:
+        var(--project-accent-soft);
+
+      border-radius: 0 10px 10px 0;
+
+    }
+
+
+    .development-note strong {
+
+      display: block;
+
+      margin-bottom: 8px;
+
+      color:
+        var(--project-accent);
+
+      font-size: 0.8rem;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .development-note p {
+
+      margin: 0;
+
+      color: #929c9b;
+
+      font-size: 0.92rem;
+
+    }
+
+
+    /* =====================================================
+       VIDEO
+    ====================================================== */
+
+    .project-video {
+
+      display: block;
+
+      width: 100%;
+
+      margin-top: 35px;
+
+      border-radius: 14px;
+
+      border:
+        1px solid #2c2633;
+
+      background: #000;
+
+    }
+
+
+    /* =====================================================
+       ACTIONS
+    ====================================================== */
+
+    .project-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 40px;
+
+    }
+
+
+    .project-action {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      padding: 11px 18px;
+
+      border:
+        1px solid
+        var(--project-accent);
+
+      border-radius: 5px;
+
+      color:
+        var(--project-accent);
+
+      background: transparent;
+
+      font-size: 0.75rem;
+
+      font-weight: 800;
+
+      text-decoration: none;
+
+      transition:
+        all 0.25s ease;
+
+    }
+
+
+    .project-action:hover {
+
+      background:
+        var(--project-accent);
+
+      color: #11091a;
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 8px 25px
+        rgba(181, 108, 255, 0.18);
+
+    }
+
+
+    .project-action.secondary {
+
+      border-color: #38323e;
+
+      color: #929c9b;
+
+    }
+
+
+    .project-action.secondary:hover {
+
+      border-color:
+        var(--project-accent);
+
+      color:
+        var(--project-accent);
+
+      background: transparent;
+
+      box-shadow: none;
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 800px) {
+
+      .project-detail-page {
+
+        padding-top: 80px;
+
+      }
+
+
+      .project-hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding-top: 50px;
+
+      }
+
+
+      .project-hero h1 {
+
+        font-size:
+          clamp(3rem, 14vw, 5rem);
+
+      }
+
+
+      .project-info-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .project-gallery {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .project-hero,
+      .project-detail-content {
+
+        width:
+          min(100% - 28px, 1200px);
+
+      }
+
+
+      .project-detail-section {
+
+        padding: 50px 0;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <nav class="navbar">
+
+      <a href="index.html" class="brand">
+
+        <span class="brand-logo">
+          A
+        </span>
+
+        <span>
+          Arka's <strong>Portfolio</strong>
+        </span>
+
+      </a>
+
+
+      <div class="nav-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a
+          href="projects.html"
+          class="active"
+        >
+          Projects
+        </a>
+
+        <a href="experience.html">
+          Experience
+        </a>
+
+        <a href="gallery.html">
+          Gallery
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation menu"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       LORA PROJECT
+  ====================================================== -->
+
+  <main class="project-detail-page">
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section class="project-hero">
+
+
+      <div class="project-hero-info">
+
+
+        <span class="project-category">
+          17 / WIRELESS COMMUNICATION
+        </span>
+
+
+        <h1>
+          LORA
+          <span>LINK</span>
+        </h1>
+
+
+        <p class="project-tagline">
+
+          A long-range wireless communication project
+          exploring reliable data transfer, embedded
+          networking and remote communication between
+          distributed systems.
+
+        </p>
+
+
+        <div class="project-detail-status">
+
+          <span class="status-dot"></span>
+
+          IN DEVELOPMENT
+
+        </div>
+
+
+        <div class="project-hero-tech">
+
+          <span>
+            LoRa
+          </span>
+
+          <span>
+            RF COMMUNICATION
+          </span>
+
+          <span>
+            ESP32
+          </span>
+
+          <span>
+            EMBEDDED
+          </span>
+
+          <span>
+            LONG RANGE
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="project-hero-image">
+
+        <img
+          src="lora/lora.webp"
+          alt="LoRa communication link"
+        >
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         CONTENT
+    ==================================================== -->
+
+    <div class="project-detail-content">
+
+
+      <!-- =================================================
+           OVERVIEW
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          01 / OVERVIEW
+        </span>
+
+
+        <h2>
+          Connecting systems
+          over long distances.
+        </h2>
+
+
+        <p>
+
+          The LoRa Communication Link is an embedded
+          wireless communication project focused on
+          establishing a long-range data link between
+          distributed electronic systems.
+
+        </p>
+
+
+        <p>
+
+          The project explores how low-power long-range
+          radio communication can be used for robotics,
+          remote monitoring and other embedded applications.
+
+        </p>
+
+      </section>
+
+
+
+      <!-- =================================================
+           OBJECTIVES
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          02 / OBJECTIVES
+        </span>
+
+
+        <h2>
+          What the system is
+          being developed to achieve.
+        </h2>
+
+
+        <div class="project-info-grid">
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Communication
+            </h3>
+
+            <ul>
+
+              <li>
+                Establish a reliable long-range wireless link.
+              </li>
+
+              <li>
+                Exchange data between remote nodes.
+              </li>
+
+              <li>
+                Evaluate communication reliability.
+              </li>
+
+              <li>
+                Explore low-power RF communication.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Embedded Integration
+            </h3>
+
+            <ul>
+
+              <li>
+                Interface LoRa modules with microcontrollers.
+              </li>
+
+              <li>
+                Develop transmitter and receiver logic.
+              </li>
+
+              <li>
+                Process received data locally.
+              </li>
+
+              <li>
+                Integrate the link into robotics systems.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           SYSTEM ARCHITECTURE
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          03 / ARCHITECTURE
+        </span>
+
+
+        <h2>
+          A simple link.
+          A powerful capability.
+        </h2>
+
+
+        <p>
+
+          The basic architecture consists of a transmitting
+          embedded node, a LoRa radio interface and a
+          receiving embedded node.
+
+        </p>
+
+
+        <div class="project-info-grid">
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Transmitter Node
+            </h3>
+
+            <ul>
+
+              <li>
+                Sensor or control data generation.
+              </li>
+
+              <li>
+                Microcontroller-based processing.
+              </li>
+
+              <li>
+                LoRa packet transmission.
+              </li>
+
+            </ul>
+
+          </div>
+
+
+
+          <div class="project-info-box">
+
+            <h3>
+              Receiver Node
+            </h3>
+
+            <ul>
+
+              <li>
+                LoRa packet reception.
+              </li>
+
+              <li>
+                Data decoding and processing.
+              </li>
+
+              <li>
+                Output to the target system.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           HARDWARE
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          04 / HARDWARE
+        </span>
+
+
+        <h2>
+          Communication hardware.
+        </h2>
+
+
+        <table class="project-specs">
+
+
+          <tr>
+
+            <td>
+              Communication Technology
+            </td>
+
+            <td>
+              LoRa / Long Range RF
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Controller
+            </td>
+
+            <td>
+              ESP32-based embedded platform
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Radio Interface
+            </td>
+
+            <td>
+              LoRa transceiver module
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Communication Type
+            </td>
+
+            <td>
+              Wireless point-to-point data communication
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>
+              Development Stage
+            </td>
+
+            <td>
+              Prototype / active development
+            </td>
+
+          </tr>
+
+        </table>
+
+      </section>
+
+
+
+      <!-- =================================================
+           SOFTWARE
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          05 / SOFTWARE
+        </span>
+
+
+        <h2>
+          Data is only useful
+          when it arrives reliably.
+        </h2>
+
+
+        <p>
+
+          The embedded software is responsible for
+          preparing data packets, transmitting them through
+          the LoRa interface and processing packets received
+          by the remote node.
+
+        </p>
+
+
+        <p>
+
+          Development is focused on reliable communication,
+          packet handling and integration with larger
+          embedded and robotics systems.
+
+        </p>
+
+
+        <div class="project-hero-tech">
+
+          <span>
+            ESP32
+          </span>
+
+          <span>
+            SERIAL
+          </span>
+
+          <span>
+            SPI
+          </span>
+
+          <span>
+            PACKET DATA
+          </span>
+
+          <span>
+            RF LINK
+          </span>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           TESTING
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          06 / TESTING
+        </span>
+
+
+        <h2>
+          Measure the link.
+          Improve the link.
+        </h2>
+
+
+        <p>
+
+          Testing focuses on communication reliability,
+          packet reception, range behaviour and the effect
+          of environmental conditions on the wireless link.
+
+        </p>
+
+
+        <div class="project-gallery">
+
+
+          <img
+            src="lora/testing.webp"
+            alt="LoRa communication testing"
+            loading="lazy"
+          >
+
+
+          <img
+            src="lora/setup.webp"
+            alt="LoRa communication setup"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <!-- Add actual test video when available -->
+
+        <!--
+
+        <video
+          class="project-video"
+          controls
+          preload="metadata"
+        >
+
+          <source
+            src="lora/lora-test.mp4"
+            type="video/mp4"
+          >
+
+          Your browser does not support
+          the video tag.
+
+        </video>
+
+        -->
+
+      </section>
+
+
+
+      <!-- =================================================
+           DEVELOPMENT STATUS
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <span class="project-detail-label">
+          07 / STATUS
+        </span>
+
+
+        <h2>
+          Still being engineered.
+        </h2>
+
+
+        <p>
+
+          The LoRa Communication Link is currently under
+          development. The system is being refined through
+          hardware testing, communication experiments and
+          integration with embedded platforms.
+
+        </p>
+
+
+        <div class="development-note">
+
+          <strong>
+            CURRENT DEVELOPMENT
+          </strong>
+
+          <p>
+
+            Improving communication reliability,
+            testing range and developing a robust
+            embedded communication architecture.
+
+          </p>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           ACTIONS
+      ================================================== -->
+
+      <section class="project-detail-section">
+
+        <div class="project-actions">
+
+
+          <a
+            href="projects.html"
+            class="project-action secondary"
+          >
+
+            <i class="fas fa-arrow-left"></i>
+
+            Back to Projects
+
+          </a>
+
+
+        </div>
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
