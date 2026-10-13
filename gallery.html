@@ -2,150 +2,862 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Gallery | Arka's Portfolio</title>
+    <meta charset="UTF-8">
 
-  <link rel="stylesheet" href="style.css">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+    <title>Gallery | Arka Manna</title>
+
+    <!-- MAIN PORTFOLIO CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
 </head>
+
 
 <body>
 
-  <!-- =====================================================
-       NAVIGATION
-  ====================================================== -->
 
-  <header class="site-header">
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
-    <nav class="navbar">
+<nav class="navbar">
 
-      <a href="index.html" class="brand">
-
-        <span class="brand-logo">A</span>
-
-        <span>
-          Arka's <strong>Portfolio</strong>
-        </span>
-
-      </a>
-
-      <div class="nav-links">
+    <div class="nav-logo">
 
         <a href="index.html">
-          Home
+
+            <span class="logo-box">
+                A
+            </span>
+
+            <span class="logo-text">
+                Arka's <span>Portfolio</span>
+            </span>
+
+        </a>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
         </a>
 
         <a href="about.html">
-          About
+            About
         </a>
 
         <a href="projects.html">
-          Projects
+            Projects
         </a>
 
         <a href="experience.html">
-          Experience
+            Experience
         </a>
 
-        <a href="gallery.html" class="active">
-          Gallery
+        <a
+            href="gallery.html"
+            class="active"
+        >
+            Gallery
         </a>
 
         <a href="contact.html">
-          Contact
+            Contact
         </a>
 
-      </div>
+    </div>
 
-      <button
-        class="menu-toggle"
-        aria-label="Open navigation menu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-    </nav>
-
-  </header>
+</nav>
 
 
-  <!-- =====================================================
-       GALLERY
-  ====================================================== -->
 
-  <main class="gallery-page">
+<!-- =========================================================
+     VISUAL ARCHIVE
+========================================================= -->
 
-    <section class="gallery-section">
+<main class="archive-page">
 
-      <div class="gallery-container">
 
-        <!-- Heading -->
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
-        <div class="gallery-heading">
+    <section class="archive-hero">
 
-          <span>
-            04 / GALLERY
-          </span>
-
-          <h1>
-            Behind the
-            <br>
-            <strong>build.</strong>
-          </h1>
-
-         
-
+        <div class="archive-kicker">
+            04 / VISUAL ARCHIVE
         </div>
 
 
-        <!-- =================================================
-             COMING SOON
-        ================================================== -->
+        <h1 class="archive-title">
 
-        <div class="gallery-coming-soon">
+            LIFE<br>
 
-          <div class="gallery-coming-icon">
-            <i class="fa-solid fa-camera"></i>
-          </div>
+            BEHIND<br>
 
-          <span class="gallery-coming-label">
-            VISUAL ARCHIVE
-          </span>
+            <span class="green">
+                THE
+            </span>
 
-          <h2>
-            GALLERY
-            <strong>COMING SOON</strong>
-          </h2>
+            <span class="red">
+                BUILD.
+            </span>
 
-          <p>
-            A visual archive of builds, prototypes, aircraft,
-            robotics experiments, testing sessions and
-            engineering moments.
-          </p>
+        </h1>
 
-          <div class="gallery-coming-status">
-            <span></span>
-            IN DEVELOPMENT
-          </div>
 
-        </div>
+        <p class="archive-intro">
 
-      </div>
+            A visual record of competitions,
+            outreach, field tests, achievements,
+            team moments and the work behind
+            the machines.
+
+        </p>
 
     </section>
 
-  </main>
 
 
-  <script src="script.js"></script>
+    <!-- =====================================================
+         SIDE ARCHIVE INDEX
+    ====================================================== -->
+
+    <aside class="archive-index">
+
+        <a href="#achievements">
+            01 / Achievements
+        </a>
+
+        <a href="#outreach">
+            02 / Outreach
+        </a>
+
+        <a href="#field-tests">
+            03 / Field Tests
+        </a>
+
+        <a href="#competitions">
+            04 / Competitions
+        </a>
+
+        <a href="#team">
+            05 / Team
+        </a>
+
+        <a href="#workshop">
+            06 / Workshop
+        </a>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         01 — ACHIEVEMENTS
+    ====================================================== -->
+
+    <section
+        class="archive-section"
+        id="achievements"
+    >
+
+        <h2 class="archive-section-title green">
+            Achievements
+        </h2>
+
+
+        <div class="archive-story">
+
+
+            <!-- PHOTO -->
+
+            <div
+                class="archive-photo"
+                data-image="gallery/achievement-01.webp"
+            >
+
+                <img
+                    src="gallery/achievement-01.webp"
+                    alt="Achievement and recognition"
+                    loading="lazy"
+                >
+
+                <span class="archive-label">
+                    ACHIEVEMENT / 001
+                </span>
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="archive-copy">
+
+                <div class="archive-copy-meta">
+                    Achievement // Recognition
+                </div>
+
+
+                <h2>
+                    Moments That Made
+                    The Work Worth It.
+                </h2>
+
+
+                <p>
+                    Recognition, certificates and milestones
+                    from the engineering journey.
+                </p>
+
+
+                <div class="archive-details">
+
+                    <span>
+                        TYPE<br>
+                        <b>Achievement</b>
+                    </span>
+
+                    <span>
+                        ARCHIVE<br>
+                        <b>01</b>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <div class="archive-divider"></div>
+
+
+
+    <!-- =====================================================
+         02 — OUTREACH
+    ====================================================== -->
+
+    <section
+        class="archive-section"
+        id="outreach"
+    >
+
+        <h2 class="archive-section-title red">
+            Outreach
+        </h2>
+
+
+        <div class="archive-story reverse">
+
+
+            <!-- PHOTO -->
+
+            <div
+                class="archive-photo"
+                data-image="gallery/outreach7.webp"
+            >
+
+                <img
+                    src="gallery/outreach7.webp"
+                    alt="Robotics outreach program"
+                    loading="lazy"
+                >
+
+                <span class="archive-label">
+                    OUTREACH / 002
+                </span>
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="archive-copy">
+
+                <div class="archive-copy-meta">
+                    Outreach // STEM
+                </div>
+
+
+                <h2>
+                    Building The
+                    Next Generation.
+                </h2>
+
+
+                <p>
+                    Robotics sessions, demonstrations and
+                    hands-on STEM interactions with students.
+                </p>
+
+
+                <div class="archive-details">
+
+                    <span>
+                        TYPE<br>
+                        <b>School Outreach</b>
+                    </span>
+
+                    <span>
+                        ARCHIVE<br>
+                        <b>02</b>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <div class="archive-divider"></div>
+
+
+
+    <!-- =====================================================
+         03 — FIELD TESTS
+    ====================================================== -->
+
+    <section
+        class="archive-section"
+        id="field-tests"
+    >
+
+        <h2 class="archive-section-title green">
+            Field Tests
+        </h2>
+
+
+        <div class="archive-story">
+
+
+            <!-- PHOTO -->
+
+            <div
+                class="archive-photo"
+                data-image="gallery/flight-test-video.jpg"
+            >
+
+                <img
+                    src="gallery/flight-test-video.jpg"
+                    alt="Aircraft field test"
+                    loading="lazy"
+                >
+
+                <span class="archive-label">
+                    FIELD / 003
+                </span>
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="archive-copy">
+
+                <div class="archive-copy-meta">
+                    Field Test // Flight
+                </div>
+
+
+                <h2>
+                    Test It In
+                    The Real World.
+                </h2>
+
+
+                <p>
+                    Outdoor aircraft testing and real-world
+                    validation beyond the workshop.
+                </p>
+
+
+                <div class="archive-details">
+
+                    <span>
+                        TYPE<br>
+                        <b>Flight Test</b>
+                    </span>
+
+                    <span>
+                        DOMAIN<br>
+                        <b>Aerospace</b>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <div class="archive-divider"></div>
+
+
+
+    <!-- =====================================================
+         04 — COMPETITIONS
+    ====================================================== -->
+
+    <section
+        class="archive-section"
+        id="competitions"
+    >
+
+        <h2 class="archive-section-title red">
+            Competitions
+        </h2>
+
+
+        <div class="archive-story reverse">
+
+
+            <!-- PHOTO -->
+
+            <div
+                class="archive-photo"
+                data-image="gallery/robotics-competition-02.webp"
+            >
+
+                <img
+                    src="gallery/robotics-competition-02.webp"
+                    alt="Robotics competition"
+                    loading="lazy"
+                >
+
+                <span class="archive-label">
+                    COMP / 004
+                </span>
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="archive-copy">
+
+                <div class="archive-copy-meta">
+                    Competition // Robotics
+                </div>
+
+
+                <h2>
+                    Engineering
+                    Under Pressure.
+                </h2>
+
+
+                <p>
+                    Competition floors, team moments and
+                    machines being put to the test.
+                </p>
+
+
+                <div class="archive-details">
+
+                    <span>
+                        TYPE<br>
+                        <b>Robotics</b>
+                    </span>
+
+                    <span>
+                        ARCHIVE<br>
+                        <b>04</b>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <div class="archive-divider"></div>
+
+
+
+    <!-- =====================================================
+         05 — TEAM
+    ====================================================== -->
+
+    <section
+        class="archive-section"
+        id="team"
+    >
+
+        <h2 class="archive-section-title green">
+            Team
+        </h2>
+
+
+        <div class="archive-story">
+
+
+            <!-- PHOTO -->
+
+            <div
+                class="archive-photo"
+                data-image="gallery/achievement-02.png"
+            >
+
+                <img
+                    src="gallery/achievement-02.png"
+                    alt="Engineering team"
+                    loading="lazy"
+                >
+
+                <span class="archive-label">
+                    TEAM / 005
+                </span>
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="archive-copy">
+
+                <div class="archive-copy-meta">
+                    Team // Collaboration
+                </div>
+
+
+                <h2>
+                    The People Behind
+                    The Machines.
+                </h2>
+
+
+                <p>
+                    Team moments, collaboration and the people
+                    behind the engineering work.
+                </p>
+
+
+                <div class="archive-details">
+
+                    <span>
+                        TYPE<br>
+                        <b>Team Moment</b>
+                    </span>
+
+                    <span>
+                        ARCHIVE<br>
+                        <b>05</b>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <div class="archive-divider"></div>
+
+
+
+    <!-- =====================================================
+         06 — WORKSHOP
+    ====================================================== -->
+
+    <section
+        class="archive-section"
+        id="workshop"
+    >
+
+        <h2 class="archive-section-title red">
+            Workshop
+        </h2>
+
+
+        <div class="archive-story reverse">
+
+
+            <!-- PHOTO -->
+
+            <div
+                class="archive-photo"
+                data-image="gallery/robotics-02.webp"
+            >
+
+                <img
+                    src="gallery/robotics-02.webp"
+                    alt="Workshop and robotics build"
+                    loading="lazy"
+                >
+
+                <span class="archive-label">
+                    SHOP / 006
+                </span>
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="archive-copy">
+
+                <div class="archive-copy-meta">
+                    Workshop // Build
+                </div>
+
+
+                <h2>
+                    Where Ideas
+                    Become Hardware.
+                </h2>
+
+
+                <p>
+                    Hands-on assembly, electronics and
+                    the practical work behind the machines.
+                </p>
+
+
+                <div class="archive-details">
+
+                    <span>
+                        TYPE<br>
+                        <b>Build Process</b>
+                    </span>
+
+                    <span>
+                        ARCHIVE<br>
+                        <b>06</b>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+</main>
+
+
+
+<!-- =========================================================
+     LIGHTBOX
+========================================================= -->
+
+<div
+    class="archive-lightbox"
+    id="archiveLightbox"
+>
+
+    <button
+        class="archive-close"
+        id="archiveClose"
+        aria-label="Close image"
+    >
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+
+    <img
+        id="archiveLightboxImage"
+        src=""
+        alt=""
+    >
+
+</div>
+
+
+
+<!-- =========================================================
+     GALLERY JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    /* =========================================================
+       LIGHTBOX
+    ========================================================= */
+
+    const archivePhotos =
+        document.querySelectorAll(".archive-photo");
+
+    const archiveLightbox =
+        document.getElementById("archiveLightbox");
+
+    const archiveLightboxImage =
+        document.getElementById("archiveLightboxImage");
+
+    const archiveClose =
+        document.getElementById("archiveClose");
+
+
+    archivePhotos.forEach(photo => {
+
+        photo.addEventListener("click", () => {
+
+            const image =
+                photo.dataset.image;
+
+            archiveLightboxImage.src = image;
+
+            archiveLightbox.classList.add("open");
+
+            document.body.style.overflow = "hidden";
+
+        });
+
+    });
+
+
+    function closeArchiveLightbox() {
+
+        archiveLightbox.classList.remove("open");
+
+        archiveLightboxImage.src = "";
+
+        document.body.style.overflow = "";
+
+    }
+
+
+    archiveClose.addEventListener(
+        "click",
+        closeArchiveLightbox
+    );
+
+
+    archiveLightbox.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target === archiveLightbox
+            ) {
+
+                closeArchiveLightbox();
+
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (event.key === "Escape") {
+
+                closeArchiveLightbox();
+
+            }
+
+        }
+    );
+
+
+    /* =========================================================
+       ACTIVE SIDE INDEX
+    ========================================================= */
+
+    const archiveSections =
+        document.querySelectorAll(
+            ".archive-section"
+        );
+
+    const archiveLinks =
+        document.querySelectorAll(
+            ".archive-index a"
+        );
+
+
+    const archiveObserver =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        archiveLinks.forEach(
+                            link => {
+                                link.classList.remove(
+                                    "active"
+                                );
+                            }
+                        );
+
+
+                        const activeLink =
+                            document.querySelector(
+                                `.archive-index a[href="#${entry.target.id}"]`
+                            );
+
+
+                        if (activeLink) {
+
+                            activeLink.classList.add(
+                                "active"
+                            );
+
+                        }
+
+                    }
+
+                });
+
+            },
+            {
+                rootMargin:
+                    "-40% 0px -50% 0px"
+            }
+        );
+
+
+    archiveSections.forEach(section => {
+
+        archiveObserver.observe(section);
+
+    });
+
+</script>
+
 
 </body>
 
